@@ -2,11 +2,13 @@
 #include <fstream>
 #include <cstring>
 #include <cmath>
+#include <vector>
 
 typedef struct{
 	std::string name;
 	int profileID;
 	int mmr;
+	int bountyExtracted;
 	int downedMe;
 	int killedMe;
 	int downedMate;
@@ -15,7 +17,23 @@ typedef struct{
 	int KilledByMe;
 	int downedByMate;
 	int killedByMate;
+	bool teamextraction;
 }player;
+
+typedef struct{
+	player teamMitglieder[3];
+	int teamGroesse;
+	int mmr;
+	int numPlayers;
+	bool ownTeam;
+}team;
+
+int ANZ_SUCHBEGRIFFE = 13;
+
+int AnzahlTeamsAuslesen(std::ifstream& file);
+bool TeamGroessenAuslesen(team* mannschaften, int anzahlTeams, std::ifstream& file);
+void SpielerAuslesen(team* mannschaften, int anzahlTeams, std::ifstream& file);
+void SpielerNameLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften);
 
 int main(int argc, char** argv)
 {
@@ -31,6 +49,7 @@ int main(int argc, char** argv)
 		std::cout<<"Versuche "<<argv[1]<<" zu oeffnen\n";
 		file.open(argv[1], std::ifstream::in);
 	}
+	
 	if(!file.good())
 	{
 		std::cout<<"Klappt nicht\n";
@@ -38,33 +57,178 @@ int main(int argc, char** argv)
 	}
 	std::cout<<"Erfolg!!!\n";
 	
+	std::string suchBegriff;
+	int anzahlTeams = AnzahlTeamsAuslesen(file);
+	if(anzahlTeams == 0)
+	{
+		std::cout<<"Anzahl der Teams nicht gefunden => Abbruch\n";
+		return EXIT_FAILURE;
+	}
+	file.seekg(0, file.beg); //Zeiger an Anfang von file setzen
+	std::cout<<"position Dateizeiger: "<<file.tellg()<<"\n";
+
+	team* mannschaften = new team[anzahlTeams];
+	if(!TeamGroessenAuslesen(mannschaften, anzahlTeams, file))
+	{
+		std::cout<<"Auslesen der Teamgroesse fehlgeschlagen => Abbruch\n";
+		return EXIT_FAILURE;
+	}
+	for(int i = 0; i < anzahlTeams; i++)
+	{
+		std::cout<<i<<". Team: "<<mannschaften[i].teamGroesse<<" Mann stark\n";
+	}
+	file.close();
+	
+	file.open(argv[1], std::ifstream::in);
+		if(!file.good())
+	{
+		std::cout<<"Klappt nicht\n";
+		return 1;
+	}
+	
+	SpielerAuslesen(mannschaften, anzahlTeams, file);
+	for(int team = 0; team < anzahlTeams; team++)
+		for(int spieler = 0; spieler < mannschaften[team].teamGroesse; spieler++)
+			std::cout<<"Spieler "<<team<<" - "<<spieler<<": "<<mannschaften[team].teamMitglieder[spieler].name<<"\n";
+	
+	system("PAUSE");
+	file.close();
+
+	delete []mannschaften;
+	return 0;
+}
+
+int AnzahlTeamsAuslesen(std::ifstream& file)
+{
 	char leseZeile[256];
-	std::string namensAttribut;
-	char nmb[3];
+	int anzahlTeams;
+	std::string Zeile;
+	std::string subZeile;
+	std::string suchBegriff;
+	std::size_t found, foundEnde;
+	
+	suchBegriff = " <Attr name=\"MissionBagNumTeams\" value=\"";
 	while(!file.eof())
 	{
 		file.getline(leseZeile, 256);
-		//MissionBagNumTeams zeigt anzahl der Teams an!!
-		for(int team=0; team < 12; team++)
+		Zeile = leseZeile;
+		found = Zeile.find(suchBegriff);
+		if(found != std::string::npos)
 		{
-			for(int player=0; player < 3; player++)
+			std::cout<<suchBegriff<<" gefunden\n";
+			found += suchBegriff.length();
+			foundEnde = Zeile.find('\"', found);
+			if(foundEnde != std::string::npos)
 			{
-				namensAttribut = " <Attr name=\"MissionBagPlayer_";
-				sprintf(nmb, "%d", team);
-				namensAttribut += nmb;
-				namensAttribut += "_";
-				sprintf(nmb, "%d", player);
-				namensAttribut += nmb;
-				namensAttribut += "_blood_line_name\" value=";
-				//std::cout<<"Attribut = "<<namensAttribut<<"\n";
-				//if(strncmp(leseZeile, namensAttribut, namensAttribut.length()) == 0)
-				if(namensAttribut.compare(0, namensAttribut.length(), leseZeile, namensAttribut.length()) == 0)
+				subZeile = Zeile.substr(found, foundEnde - found);
+				anzahlTeams = std::stoi(subZeile);
+				if(anzahlTeams > 0)return anzahlTeams;
+				return 0;
+			}
+		}
+	}
+	return 0;
+}
+
+bool TeamGroessenAuslesen(team* mannschaften, int anzahlTeams, std::ifstream& file)
+{
+	char leseZeile[256];
+	std::string Zeile;
+	std::string subZeile;
+	std::string suchBegriff;
+	std::size_t found, foundEnde;
+	
+	int teamGefunden = anzahlTeams;
+	
+	while(!file.eof())
+	{
+		file.getline(leseZeile, 256);
+		Zeile = leseZeile;
+		
+		for(int team=0; team < anzahlTeams; team++)
+		{
+			suchBegriff = " <Attr name=\"MissionBagTeam_";
+			suchBegriff += std::to_string(team);
+			suchBegriff += "_numplayers\" value=\"";
+			found = Zeile.find(suchBegriff);
+			if(found != std::string::npos)
+			{
+				std::cout<<suchBegriff<<" gefunden\n";
+				found += suchBegriff.length();
+				foundEnde = Zeile.find('\"', found);
+				if(foundEnde != std::string::npos)
 				{
-					std::cout<<"Name ["<<team<<", "<<player<<"] = "<<leseZeile + namensAttribut.length()<<"\n";
+					subZeile = Zeile.substr(found, foundEnde - found);
+					mannschaften[team].teamGroesse = std::stoi(subZeile);
+					teamGefunden--;
+					break;
 				}
 			}
 		}
 	}
-	system("PAUSE");
-	return 0;
+	return (!(teamGefunden));
 }
+
+void SpielerAuslesen(team* mannschaften, int anzahlTeams, std::ifstream& file)
+{
+	char leseZeile[256];
+	std::string Zeile;
+	std::string subZeile;
+	std::string suchBegriff;
+
+	while(!file.eof())
+	{
+		file.getline(leseZeile, 256);
+		Zeile = leseZeile;
+		for(int team=0; team < anzahlTeams; team++)
+		{
+			for(int spieler=0; spieler < mannschaften[team].teamGroesse; spieler++)
+			{
+				SpielerNameLesen(team, spieler, Zeile, mannschaften);
+			}
+		}
+	}
+	return;
+}
+
+void SpielerNameLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften)
+{	
+	std::string subZeile;
+	std::size_t found, foundEnde;
+	std::string suchBegriff = " <Attr name=\"MissionBagPlayer_";
+	suchBegriff += std::to_string(teamNr);
+	suchBegriff += "_";
+	suchBegriff += std::to_string(spielerNr);
+	suchBegriff += "_blood_line_name\" value=\"";
+
+	found = Zeile.find(suchBegriff);
+	if(found != std::string::npos)
+	{
+		std::cout<<suchBegriff<<" gefunden\n";
+		found += suchBegriff.length();
+		foundEnde = Zeile.find('\"', found);
+		if(foundEnde != std::string::npos)
+		{
+			subZeile = Zeile.substr(found, foundEnde - found);
+			mannschaften[teamNr].teamMitglieder[spielerNr].name = subZeile;
+			return;
+		}
+	}
+	return;
+}
+	
+/*	suchBegriffe[1] = " <Attr name=\"MissionBagPlayer_" + teamNr + "_" + spielerNr + "_teamextraction\" value=\"";
+	suchBegriffe[2] = " <Attr name=\"MissionBagPlayer_" + teamNr + "_" + spielerNr + "_bountyextracted\" value=\"";
+	suchBegriffe[3] = " <Attr name=\"MissionBagPlayer_" + teamNr + "_" + spielerNr + "_downedbyme\" value=\"";
+	suchBegriffe[4] = " <Attr name=\"MissionBagPlayer_" + teamNr + "_" + spielerNr + "_downedbyteammate\" value=\"";
+	suchBegriffe[5] = " <Attr name=\"MissionBagPlayer_" + teamNr + "_" + spielerNr + "_downedme\" value=\"";
+	suchBegriffe[6] = " <Attr name=\"MissionBagPlayer_" + teamNr + "_" + spielerNr + "_downedteammate\" value=\"";
+	suchBegriffe[7] = " <Attr name=\"MissionBagPlayer_" + teamNr + "_" + spielerNr + "_killedbyme\" value=\"";
+	suchBegriffe[8] = " <Attr name=\"MissionBagPlayer_" + teamNr + "_" + spielerNr + "_killedbyteammate\" value=\"";
+	suchBegriffe[9] = " <Attr name=\"MissionBagPlayer_" + teamNr + "_" + spielerNr + "_killedme\" value=\"";
+	suchBegriffe[10] = " <Attr name=\"MissionBagPlayer_" + teamNr + "_" + spielerNr + "_killedteammate\" value=\"";
+	suchBegriffe[11] = " <Attr name=\"MissionBagPlayer_" + teamNr + "_" + spielerNr + "_mmr\" value=\"";
+	suchBegriffe[12] = " <Attr name=\"MissionBagPlayer_" + teamNr + "_" + spielerNr + "_profileid\" value=\"";
+	
+	return;
+}*/
