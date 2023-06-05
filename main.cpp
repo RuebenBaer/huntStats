@@ -28,12 +28,22 @@ typedef struct{
 	bool ownTeam;
 }team;
 
-int ANZ_SUCHBEGRIFFE = 13;
-
 int AnzahlTeamsAuslesen(std::ifstream& file);
 bool TeamGroessenAuslesen(team* mannschaften, int anzahlTeams, std::ifstream& file);
 void SpielerAuslesen(team* mannschaften, int anzahlTeams, std::ifstream& file);
 void SpielerNameLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften);
+void SpielerExtractionLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften);
+void SpielerBountyLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften);
+void SpielerDownedByMeLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften);
+void SpielerDownedByTMLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften);
+void SpielerDownedMeLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften);
+void SpielerDownedTMLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften);
+void SpielerKilledByMeLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften);
+void SpielerKilledByTMLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften);
+void SpielerKilledMeLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften);
+void SpielerKilledTMLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften);
+void SpielerMMRLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften);
+void SpielerProfilIDLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften);
 
 int main(int argc, char** argv)
 {
@@ -121,7 +131,7 @@ int AnzahlTeamsAuslesen(std::ifstream& file)
 			if(foundEnde != std::string::npos)
 			{
 				subZeile = Zeile.substr(found, foundEnde - found);
-				anzahlTeams = std::stoi(subZeile);
+				anzahlTeams = std::atoi(subZeile.c_str());
 				if(anzahlTeams > 0)return anzahlTeams;
 				return 0;
 			}
@@ -159,7 +169,7 @@ bool TeamGroessenAuslesen(team* mannschaften, int anzahlTeams, std::ifstream& fi
 				if(foundEnde != std::string::npos)
 				{
 					subZeile = Zeile.substr(found, foundEnde - found);
-					mannschaften[team].teamGroesse = std::stoi(subZeile);
+					mannschaften[team].teamGroesse = std::atoi(subZeile.c_str());
 					teamGefunden--;
 					break;
 				}
@@ -185,6 +195,7 @@ void SpielerAuslesen(team* mannschaften, int anzahlTeams, std::ifstream& file)
 			for(int spieler=0; spieler < mannschaften[team].teamGroesse; spieler++)
 			{
 				SpielerNameLesen(team, spieler, Zeile, mannschaften);
+				SpielerExtractionLesen(team, spieler, Zeile, mannschaften);
 			}
 		}
 	}
@@ -216,6 +227,56 @@ void SpielerNameLesen(int teamNr, int spielerNr, std::string& Zeile, team* manns
 	}
 	return;
 }
+
+void SpielerExtractionLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften)
+{	
+	std::string subZeile;
+	std::size_t found, foundEnde;
+	std::string suchBegriff = " <Attr name=\"MissionBagPlayer_";
+	suchBegriff += std::to_string(teamNr);
+	suchBegriff += "_";
+	suchBegriff += std::to_string(spielerNr);
+	suchBegriff += "_teamextraction\" value=\"";
+
+	found = Zeile.find(suchBegriff);
+	if(found != std::string::npos)
+	{
+		std::cout<<suchBegriff<<" gefunden\n";
+		found += suchBegriff.length();
+		foundEnde = Zeile.find('\"', found);
+		if(foundEnde != std::string::npos)
+		{
+			subZeile = Zeile.substr(found, foundEnde - found);
+			mannschaften[teamNr].teamMitglieder[spielerNr].teamextraction = std::atoi(subZeile.c_str());
+			return;
+		}
+	}
+	return;
+}
+
+void SpielerBountyLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften)
+{}
+void SpielerDownedByMeLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften)
+{}
+void SpielerDownedByTMLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften)
+{}
+void SpielerDownedMeLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften)
+{}
+void SpielerDownedTMLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften)
+{}
+void SpielerKilledByMeLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften)
+{}
+void SpielerKilledByTMLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften)
+{}
+void SpielerKilledMeLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften)
+{}
+void SpielerKilledTMLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften)
+{}
+void SpielerMMRLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften)
+{}
+void SpielerProfilIDLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften)
+{}
+
 	
 /*	suchBegriffe[1] = " <Attr name=\"MissionBagPlayer_" + teamNr + "_" + spielerNr + "_teamextraction\" value=\"";
 	suchBegriffe[2] = " <Attr name=\"MissionBagPlayer_" + teamNr + "_" + spielerNr + "_bountyextracted\" value=\"";
