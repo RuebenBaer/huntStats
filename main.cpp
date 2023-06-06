@@ -49,27 +49,42 @@ void SpielerProfilIDLesen(int teamNr, int spielerNr, std::string& Zeile, team* m
 void TeamAusgeben(team mannschaft);
 void SpielerAusgeben(player spieler);
 
+int AssistsAuslesen(std::ifstream& file);
+
 int main(int argc, char** argv)
 {
 	std::ifstream file;
+	std::string strIch;
 	if(argc == 1)
 	{
 		std::cout<<"Keine Datei zum Auswerten angegeben\n";
 		system("PAUSE");
 		return 1;
 	}
-	else
+	else if(argc == 3)
 	{
-		std::cout<<"Versuche "<<argv[1]<<" zu oeffnen\n";
 		file.open(argv[1], std::ifstream::in);
+		char leseZeile[256];
+		if(file.good())
+		{
+			file.getline(leseZeile, 256);
+			strIch = leseZeile;
+			file.close();
+			std::cout<<"Mein Name: "<<strIch<<"\n\n";
+		}else
+		{
+			std::cout<<"Name kann nicht gelesen werden\n";
+			return EXIT_FAILURE;
+		}
+		std::cout<<"Versuche "<<argv[2]<<" zu oeffnen\n";
+		file.open(argv[2], std::ifstream::in);
 	}
 	
 	if(!file.good())
 	{
 		std::cout<<"Klappt nicht\n";
-		return 1;
+		return EXIT_FAILURE;
 	}
-	std::cout<<"Erfolg!!!\n";
 	
 	std::string suchBegriff;
 	int anzahlTeams = AnzahlTeamsAuslesen(file);
@@ -87,16 +102,12 @@ int main(int argc, char** argv)
 		std::cout<<"Auslesen der Teamgroesse fehlgeschlagen => Abbruch\n";
 		return EXIT_FAILURE;
 	}
-	for(int i = 0; i < anzahlTeams; i++)
-	{
-		std::cout<<i<<". Team: "<<mannschaften[i].teamGroesse<<" Mann stark\n";
-	}
 	file.close();
 	
-	file.open(argv[1], std::ifstream::in);
-		if(!file.good())
+	file.open(argv[2], std::ifstream::in);
+	if(!file.good())
 	{
-		std::cout<<"Klappt nicht\n";
+		std::cout<<"Kann Datei nicht oeffnen\n";
 		return 1;
 	}
 	
@@ -105,12 +116,103 @@ int main(int argc, char** argv)
 	{
 		std::cout<<"Team "<<team<<":\n";
 		TeamAusgeben(mannschaften[team]);
-	}		
-	
-	system("PAUSE");
+	}
 	file.close();
+	
+	file.open(argv[2], std::ifstream::in);
+	if(!file.good())
+	{
+		std::cout<<"Kann Datei nicht oeffnen\n";
+		return 1;
+	}
+	
+	int assists = AssistsAuslesen(file);
+	std::cout<<"Erzielte Assists: "<<assists<<"\n\n";
+	file.close();
+	
+	//Eigenen Namen finden
+	int meinTeam;
+	for(int team = 0; team < anzahlTeams; team++)
+	{
+		for(int spieler = 0; spieler < mannschaften[team].teamGroesse; spieler++)
+		{
+			if(strIch.compare(mannschaften[team].teamMitglieder[spieler].name) == 0)
+			{
+				meinTeam = team;
+			}
+		}
+	}
+	for(int team = 0; team < anzahlTeams; team++)
+	{
+		if(team == meinTeam)continue;
+		for(int spieler = 0; spieler < mannschaften[team].teamGroesse; spieler++)
+		{
+			/*kills zaehlen*/
+		}
+	}
 
 	delete []mannschaften;
+	return 0;
+}
+
+int AssistsAuslesen(std::ifstream& file)
+{
+	char leseZeile[256];
+	int lfdNr, anzahlAssists;
+	bool NrGefunden = false;
+	std::string Zeile;
+	std::string subZeile;
+	std::string suchBegriff;
+	std::size_t found, foundEnde;
+	
+	while(!file.eof())
+	{
+		file.getline(leseZeile, 256);
+		Zeile = leseZeile;
+		if(!NrGefunden)
+		{
+			suchBegriff = "_category\" value=\"accolade_players_killed_assist\"/>";
+			foundEnde = Zeile.find(suchBegriff);
+			if(foundEnde != std::string::npos)
+			{
+				found = Zeile.find('_');
+				if(found != std::string::npos)
+				{
+					subZeile = Zeile.substr(found+1, foundEnde - found - 1);
+					lfdNr = std::atoi(subZeile.c_str());
+					std::cout<<"Nummer der MissionAccoladeEntry ist "<<lfdNr<<" ("<<subZeile<<")\n";
+					suchBegriff = "<Attr name=\"MissionAccoladeEntry_";
+					suchBegriff += std::to_string(lfdNr);
+					//suchBegriff += "_hits\" value=\"";
+					NrGefunden = true;
+				}
+			}
+		}
+		else
+		{
+			found = Zeile.find(suchBegriff);
+			if(found != std::string::npos)
+			{
+				found = Zeile.find("_hits\" value=\"");
+				if(found != std::string::npos)
+				{
+					found += std::string("_hits\" value=\"").length();
+					foundEnde = Zeile.find('\"', found);
+					if(foundEnde != std::string::npos)
+					{
+						subZeile = Zeile.substr(found, foundEnde - found);
+						anzahlAssists = std::atoi(subZeile.c_str());
+						std::cout<<"Assists: "<<anzahlAssists<<" ("<<subZeile<<")\n";
+						return anzahlAssists;
+					}
+				}
+			}
+			else
+			{
+				NrGefunden = false;
+			}
+		}
+	}
 	return 0;
 }
 
@@ -131,7 +233,6 @@ int AnzahlTeamsAuslesen(std::ifstream& file)
 		found = Zeile.find(suchBegriff);
 		if(found != std::string::npos)
 		{
-			std::cout<<suchBegriff<<" gefunden\n";
 			found += suchBegriff.length();
 			foundEnde = Zeile.find('\"', found);
 			if(foundEnde != std::string::npos)
@@ -169,7 +270,6 @@ bool TeamGroessenAuslesen(team* mannschaften, int anzahlTeams, std::ifstream& fi
 			found = Zeile.find(suchBegriff);
 			if(found != std::string::npos)
 			{
-				std::cout<<suchBegriff<<" gefunden\n";
 				found += suchBegriff.length();
 				foundEnde = Zeile.find('\"', found);
 				if(foundEnde != std::string::npos)
