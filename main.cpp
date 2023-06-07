@@ -130,15 +130,24 @@ int main(int argc, char** argv)
 	std::cout<<"Erzielte Assists: "<<assists<<"\n\n";
 	file.close();
 	
+	int teamDeaths, teamKills;
+	int myDeaths, myKills;
+	
 	//Eigenen Namen finden
-	int meinTeam;
+	int meinTeam, ichNr;
+	bool meinTeamGefunden = false;
 	for(int team = 0; team < anzahlTeams; team++)
 	{
 		for(int spieler = 0; spieler < mannschaften[team].teamGroesse; spieler++)
 		{
 			if(strIch.compare(mannschaften[team].teamMitglieder[spieler].name) == 0)
 			{
+				ichNr = spieler;
 				meinTeam = team;
+				for(spieler = 0; spieler < mannschaften[team].teamGroesse; spieler++)
+				{
+					
+				}
 			}
 		}
 	}
