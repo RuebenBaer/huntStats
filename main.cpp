@@ -49,6 +49,8 @@ void SpielerProfilIDLesen(int teamNr, int spielerNr, std::string& Zeile, team* m
 void TeamAusgeben(team mannschaft);
 void SpielerAusgeben(player spieler);
 
+void ErgebnisSpeichern(team* mannschaft, int anzahlTeams);
+
 int AssistsAuslesen(std::ifstream& file);
 
 int main(int argc, char** argv)
@@ -61,28 +63,28 @@ int main(int argc, char** argv)
 		system("PAUSE");
 		return 1;
 	}
-	else if(argc == 3)
+	
+	file.open(".\\MeinName.txt", std::ifstream::in);
+	char leseZeile[256];
+	if(file.good())
 	{
-		file.open(argv[1], std::ifstream::in);
-		char leseZeile[256];
-		if(file.good())
-		{
-			file.getline(leseZeile, 256);
-			strIch = leseZeile;
-			file.close();
-			std::cout<<"Mein Name: "<<strIch<<"\n\n";
-		}else
-		{
-			std::cout<<"Name kann nicht gelesen werden\n";
-			return EXIT_FAILURE;
-		}
-		std::cout<<"Versuche "<<argv[2]<<" zu oeffnen\n";
-		file.open(argv[2], std::ifstream::in);
+		file.getline(leseZeile, 256);
+		strIch = leseZeile;
+		file.close();
+		std::cout<<"Mein Name: "<<strIch<<"\n\n";
+	}else
+	{
+		std::cout<<argv[0]<<" => Name kann nicht gelesen werden\n";
+		system("PAUSE");
+		return EXIT_FAILURE;
 	}
+	std::cout<<"Versuche "<<argv[1]<<" zu oeffnen\n";
+	file.open(argv[1], std::ifstream::in);
 	
 	if(!file.good())
 	{
 		std::cout<<"Klappt nicht\n";
+		system("PAUSE");
 		return EXIT_FAILURE;
 	}
 	
@@ -91,23 +93,25 @@ int main(int argc, char** argv)
 	if(anzahlTeams == 0)
 	{
 		std::cout<<"Anzahl der Teams nicht gefunden => Abbruch\n";
+		system("PAUSE");
 		return EXIT_FAILURE;
 	}
 	file.seekg(0, file.beg); //Zeiger an Anfang von file setzen
-	std::cout<<"position Dateizeiger: "<<file.tellg()<<"\n";
 
 	team* mannschaften = new team[anzahlTeams];
 	if(!TeamGroessenAuslesen(mannschaften, anzahlTeams, file))
 	{
 		std::cout<<"Auslesen der Teamgroesse fehlgeschlagen => Abbruch\n";
+		system("PAUSE");
 		return EXIT_FAILURE;
 	}
 	file.close();
 	
-	file.open(argv[2], std::ifstream::in);
+	file.open(argv[1], std::ifstream::in);
 	if(!file.good())
 	{
 		std::cout<<"Kann Datei nicht oeffnen\n";
+		system("PAUSE");
 		return 1;
 	}
 	
@@ -119,10 +123,11 @@ int main(int argc, char** argv)
 	}
 	file.close();
 	
-	file.open(argv[2], std::ifstream::in);
+	file.open(argv[1], std::ifstream::in);
 	if(!file.good())
 	{
 		std::cout<<"Kann Datei nicht oeffnen\n";
+		system("PAUSE");
 		return 1;
 	}
 	
@@ -130,35 +135,8 @@ int main(int argc, char** argv)
 	std::cout<<"Erzielte Assists: "<<assists<<"\n\n";
 	file.close();
 	
-	int teamDeaths, teamKills;
-	int myDeaths, myKills;
-	
-	//Eigenen Namen finden
-	int meinTeam, ichNr;
-	bool meinTeamGefunden = false;
-	for(int team = 0; team < anzahlTeams; team++)
-	{
-		for(int spieler = 0; spieler < mannschaften[team].teamGroesse; spieler++)
-		{
-			if(strIch.compare(mannschaften[team].teamMitglieder[spieler].name) == 0)
-			{
-				ichNr = spieler;
-				meinTeam = team;
-				for(spieler = 0; spieler < mannschaften[team].teamGroesse; spieler++)
-				{
-					
-				}
-			}
-		}
-	}
-	for(int team = 0; team < anzahlTeams; team++)
-	{
-		if(team == meinTeam)continue;
-		for(int spieler = 0; spieler < mannschaften[team].teamGroesse; spieler++)
-		{
-			/*kills zaehlen*/
-		}
-	}
+	ErgebnisSpeichern(mannschaften, anzahlTeams, assists);
+	system("PAUSE");
 
 	delete []mannschaften;
 	return 0;
@@ -189,10 +167,8 @@ int AssistsAuslesen(std::ifstream& file)
 				{
 					subZeile = Zeile.substr(found+1, foundEnde - found - 1);
 					lfdNr = std::atoi(subZeile.c_str());
-					std::cout<<"Nummer der MissionAccoladeEntry ist "<<lfdNr<<" ("<<subZeile<<")\n";
 					suchBegriff = "<Attr name=\"MissionAccoladeEntry_";
 					suchBegriff += std::to_string(lfdNr);
-					//suchBegriff += "_hits\" value=\"";
 					NrGefunden = true;
 				}
 			}
@@ -702,5 +678,39 @@ void SpielerAusgeben(player spieler)
 	std::cout<<std::setw(16)<<spieler.downedByMate;
 	std::cout<<std::setw(16)<<spieler.killedByMate;
 	std::cout<<std::setw(16)<<spieler.teamextraction<<"\n";
+	return;
+}
+
+void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists)
+{
+	int teamDeaths, teamKills;
+	int myDeaths, myKills;
+	
+	//Eigenen Namen finden
+	int meinTeam, ichNr;
+	bool meinTeamGefunden = false;
+	for(int team = 0; team < anzahlTeams; team++)
+	{
+		for(int spieler = 0; spieler < mannschaften[team].teamGroesse; spieler++)
+		{
+			if(strIch.compare(mannschaften[team].teamMitglieder[spieler].name) == 0)
+			{
+				ichNr = spieler;
+				meinTeam = team;
+				for(spieler = 0; spieler < mannschaften[team].teamGroesse; spieler++)
+				{
+					
+				}
+			}
+		}
+	}
+	for(int team = 0; team < anzahlTeams; team++)
+	{
+		if(team == meinTeam)continue;
+		for(int spieler = 0; spieler < mannschaften[team].teamGroesse; spieler++)
+		{
+			/*kills zaehlen*/
+		}
+	}
 	return;
 }
