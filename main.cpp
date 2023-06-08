@@ -49,7 +49,7 @@ void SpielerProfilIDLesen(int teamNr, int spielerNr, std::string& Zeile, team* m
 void TeamAusgeben(team mannschaft);
 void SpielerAusgeben(player spieler);
 
-void ErgebnisSpeichern(team* mannschaft, int anzahlTeams);
+void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists, std::string strIch);
 
 int AssistsAuslesen(std::ifstream& file);
 
@@ -64,7 +64,7 @@ int main(int argc, char** argv)
 		return 1;
 	}
 	
-	file.open(".\\MeinName.txt", std::ifstream::in);
+	file.open(".\\MeinName.txt", std::ios::in);
 	char leseZeile[256];
 	if(file.good())
 	{
@@ -79,7 +79,7 @@ int main(int argc, char** argv)
 		return EXIT_FAILURE;
 	}
 	std::cout<<"Versuche "<<argv[1]<<" zu oeffnen\n";
-	file.open(argv[1], std::ifstream::in);
+	file.open(argv[1], std::ios::in);
 	
 	if(!file.good())
 	{
@@ -87,6 +87,7 @@ int main(int argc, char** argv)
 		system("PAUSE");
 		return EXIT_FAILURE;
 	}
+	std::cout<<argv[1]<<" geoeffnet\n";
 	
 	std::string suchBegriff;
 	int anzahlTeams = AnzahlTeamsAuslesen(file);
@@ -96,7 +97,9 @@ int main(int argc, char** argv)
 		system("PAUSE");
 		return EXIT_FAILURE;
 	}
-	file.seekg(0, file.beg); //Zeiger an Anfang von file setzen
+	std::cout<<"Anzahlteams ausgelesen\n";
+	file.clear();
+	file.seekg(0L, file.beg); //Zeiger an Anfang von file setzen
 
 	team* mannschaften = new team[anzahlTeams];
 	if(!TeamGroessenAuslesen(mannschaften, anzahlTeams, file))
@@ -105,15 +108,9 @@ int main(int argc, char** argv)
 		system("PAUSE");
 		return EXIT_FAILURE;
 	}
-	file.close();
-	
-	file.open(argv[1], std::ifstream::in);
-	if(!file.good())
-	{
-		std::cout<<"Kann Datei nicht oeffnen\n";
-		system("PAUSE");
-		return 1;
-	}
+	std::cout<<"Teamgroessen ausgelesen\n";
+	file.clear();
+	file.seekg(0L, file.beg); //Zeiger an Anfang von file setzen
 	
 	SpielerAuslesen(mannschaften, anzahlTeams, file);
 	for(int team = 0; team < anzahlTeams; team++)
@@ -121,21 +118,15 @@ int main(int argc, char** argv)
 		std::cout<<"Team "<<team<<":\n";
 		TeamAusgeben(mannschaften[team]);
 	}
-	file.close();
-	
-	file.open(argv[1], std::ifstream::in);
-	if(!file.good())
-	{
-		std::cout<<"Kann Datei nicht oeffnen\n";
-		system("PAUSE");
-		return 1;
-	}
+	std::cout<<"Spieler ausgelesen\n";
+	file.clear();
+	file.seekg(0L, file.beg); //Zeiger an Anfang von file setzen
 	
 	int assists = AssistsAuslesen(file);
 	std::cout<<"Erzielte Assists: "<<assists<<"\n\n";
 	file.close();
 	
-	ErgebnisSpeichern(mannschaften, anzahlTeams, assists);
+	ErgebnisSpeichern(mannschaften, anzahlTeams, assists, strIch);
 	system("PAUSE");
 
 	delete []mannschaften;
@@ -276,6 +267,8 @@ void SpielerAuslesen(team* mannschaften, int anzahlTeams, std::ifstream& file)
 	std::string Zeile;
 	std::string subZeile;
 	std::string suchBegriff;
+	
+	std::cout<<"Beginne Spieler auszulesen\n";
 
 	while(!file.eof())
 	{
@@ -681,8 +674,9 @@ void SpielerAusgeben(player spieler)
 	return;
 }
 
-void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists)
+void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists, std::string strIch)
 {
+	std::ofstream ausgabe(".\\huntStatistik.csv", std::ios::out|std::ios::app);
 	int teamDeaths, teamKills;
 	int myDeaths, myKills;
 	
@@ -691,15 +685,15 @@ void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists)
 	bool meinTeamGefunden = false;
 	for(int team = 0; team < anzahlTeams; team++)
 	{
-		for(int spieler = 0; spieler < mannschaften[team].teamGroesse; spieler++)
+		for(int spieler = 0; spieler < mannschaft[team].teamGroesse; spieler++)
 		{
-			if(strIch.compare(mannschaften[team].teamMitglieder[spieler].name) == 0)
+			if(strIch.compare(mannschaft[team].teamMitglieder[spieler].name) == 0)
 			{
 				ichNr = spieler;
 				meinTeam = team;
-				for(spieler = 0; spieler < mannschaften[team].teamGroesse; spieler++)
+				for(spieler = 0; spieler < mannschaft[team].teamGroesse; spieler++)
 				{
-					
+					ausgabe<<strIch<<"\n";
 				}
 			}
 		}
@@ -707,7 +701,7 @@ void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists)
 	for(int team = 0; team < anzahlTeams; team++)
 	{
 		if(team == meinTeam)continue;
-		for(int spieler = 0; spieler < mannschaften[team].teamGroesse; spieler++)
+		for(int spieler = 0; spieler < mannschaft[team].teamGroesse; spieler++)
 		{
 			/*kills zaehlen*/
 		}
