@@ -676,11 +676,11 @@ void SpielerAusgeben(player spieler)
 
 void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists, std::string strIch)
 {
-	std::ofstream ausgabe("./huntStatistik.csv", std::ios::out|std::ios::app);
-	if(ausgabe.tellg() == ausgabe.beg)
+	std::ofstream ausgabe("./huntStatistik.csv", std::ios::out|std::ios::app|std::ios::ate);
+	if(ausgabe.tellp() == ausgabe.beg)
 	{
 		ausgabe<<"Ich; MMR; Kills; Tode; Assists; Partner 1; MMR; Partner 2;";
-		ausgabe<<"MMR; Kills (Team); Tode (Team); Gegner|MMR;"
+		ausgabe<<"MMR; Extraction; Bounty; Kills (Team); Tode (Team); Gegner|MMR;";
 	}
 	int teamDeaths, teamKills;
 	int myDeaths, myKills;
@@ -709,8 +709,8 @@ void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists, std::stri
 		for(int spieler = 0; spieler < mannschaft[team].teamGroesse; spieler++)
 		{
 			aktSpieler = mannschaft[team].teamMitglieder[spieler];
-			teamDeaths += aktSpieler.downedMe + spieler.killedMe + aktSpieler.downedMate + aktSpieler.killedMate;
-			myDeaths += aktSpieler.downedMe + spieler.killedMe;
+			teamDeaths += aktSpieler.downedMe + aktSpieler.killedMe + aktSpieler.downedMate + aktSpieler.killedMate;
+			myDeaths += aktSpieler.downedMe + aktSpieler.killedMe;
 			teamKills += aktSpieler.downedByMe + aktSpieler.killedByMe + aktSpieler.downedByMate + aktSpieler.killedByMate;
 			myKills += aktSpieler.downedByMe + aktSpieler.killedByMe;
 		}

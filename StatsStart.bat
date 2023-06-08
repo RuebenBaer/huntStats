@@ -1,1 +1,1 @@
-huntstats.exe ".\QP\attributes5.xml"
+huntstats.exe ".\attributes\attributes64.xml"
