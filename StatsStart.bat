@@ -1,1 +1,0 @@
-huntstats.exe ".\attributes\attributes64.xml"

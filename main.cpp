@@ -140,8 +140,18 @@ int main(int argc, char** argv)
 	std::cout<<"Erzielte Assists: "<<assists<<"\n\n";
 	file.close();
 	
-	ErgebnisSpeichern(mannschaften, anzahlTeams, assists, strIch);
-	system("PAUSE");
+	std::string antwort;
+	std::cout<<"Ergebnis speichern? [j/n]: ";
+	std::cin>>antwort;
+	if(antwort.compare("j") == 0)
+	{
+		std::cout<<"Ergebnis wird gespeichert\n";
+		ErgebnisSpeichern(mannschaften, anzahlTeams, assists, strIch);
+	}
+	else
+	{
+		std::cout<<"keine Speicherung\neinen schönen Tag noch\n";
+	}
 
 	delete []mannschaften;
 	return 0;
