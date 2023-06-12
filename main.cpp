@@ -29,6 +29,7 @@ typedef struct{
 	bool ownTeam;
 }team;
 
+int AnzahlAuszeichnungenAuslesen(std::ifstream& file);
 int AnzahlTeamsAuslesen(std::ifstream& file);
 bool TeamGroessenAuslesen(team* mannschaften, int anzahlTeams, std::ifstream& file);
 void SpielerAuslesen(team* mannschaften, int anzahlTeams, std::ifstream& file);
@@ -51,7 +52,7 @@ void SpielerAusgeben(player spieler);
 
 void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists, std::string strIch);
 
-int AssistsAuslesen(std::ifstream& file);
+int AssistsAuslesen(int anzahlAuszeichnungen, std::ifstream& file);
 
 int main(int argc, char** argv)
 {
@@ -88,8 +89,12 @@ int main(int argc, char** argv)
 		return EXIT_FAILURE;
 	}
 	std::cout<<argv[1]<<" geoeffnet\n";
+
+	int anzahlAuszeichnungen = AnzahlAuszeichnungenAuslesen(file);
+	std::cout<<anzahlAuszeichnungen<<" Auszeichnungen vergeben\n";
+	file.clear();
+	file.seekg(0L, file.beg); //Zeiger an Anfang von file setzen
 	
-	std::string suchBegriff;
 	int anzahlTeams = AnzahlTeamsAuslesen(file);
 	if(anzahlTeams == 0)
 	{
@@ -136,7 +141,7 @@ int main(int argc, char** argv)
 	file.clear();
 	file.seekg(0L, file.beg); //Zeiger an Anfang von file setzen
 	
-	int assists = AssistsAuslesen(file);
+	int assists = AssistsAuslesen(anzahlAuszeichnungen, file);
 	std::cout<<"Erzielte Assists: "<<assists<<"\n\n";
 	file.close();
 	
@@ -157,7 +162,7 @@ int main(int argc, char** argv)
 	return 0;
 }
 
-int AssistsAuslesen(std::ifstream& file)
+int AssistsAuslesen(int anzahlAuszeichnungen, std::ifstream& file)
 {
 	char leseZeile[256];
 	int lfdNr, anzahlAssists;
@@ -182,9 +187,13 @@ int AssistsAuslesen(std::ifstream& file)
 				{
 					subZeile = Zeile.substr(found+1, foundEnde - found - 1);
 					lfdNr = std::atoi(subZeile.c_str());
-					suchBegriff = "<Attr name=\"MissionAccoladeEntry_";
-					suchBegriff += std::to_string(lfdNr);
-					NrGefunden = true;
+					if(lfdNr < anzahlAuszeichnungen)
+					{
+						std::cout<<"lfdNr: "<<lfdNr<<" anzahlAuszeichnungen: "<<anzahlAuszeichnungen<<"\n";
+						suchBegriff = "<Attr name=\"MissionAccoladeEntry_";
+						suchBegriff += std::to_string(lfdNr);
+						NrGefunden = true;
+					}
 				}
 			}
 		}
@@ -283,6 +292,37 @@ bool TeamGroessenAuslesen(team* mannschaften, int anzahlTeams, std::ifstream& fi
 		}
 	}
 	return (!(teamGefunden));
+}
+
+int AnzahlAuszeichnungenAuslesen(std::ifstream& file)
+{
+	char leseZeile[256];
+	int anzahlAuszeichnungen;
+	std::string Zeile;
+	std::string subZeile;
+	std::string suchBegriff;
+	std::size_t found, foundEnde;
+	
+	suchBegriff = " <Attr name=\"MissionBagNumAccolades\" value=\"";
+	while(!file.eof())
+	{
+		file.getline(leseZeile, 256);
+		Zeile = leseZeile;
+		found = Zeile.find(suchBegriff);
+		if(found != std::string::npos)
+		{
+			found += suchBegriff.length();
+			foundEnde = Zeile.find('\"', found);
+			if(foundEnde != std::string::npos)
+			{
+				subZeile = Zeile.substr(found, foundEnde - found);
+				anzahlAuszeichnungen = std::atoi(subZeile.c_str());
+				if(anzahlAuszeichnungen > 0)return anzahlAuszeichnungen;
+				return 0;
+			}
+		}
+	}
+	return 0;
 }
 
 void SpielerAuslesen(team* mannschaften, int anzahlTeams, std::ifstream& file)
