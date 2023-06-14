@@ -47,6 +47,7 @@ void SpielerKilledTMLesen(int teamNr, int spielerNr, std::string& Zeile, team* m
 void SpielerMMRLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften);
 void SpielerProfilIDLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften);
 
+void BildschirmAusgabe(team* mannschaften, int anzahlTeams);
 void TeamAusgeben(team mannschaft);
 void SpielerAusgeben(player spieler);
 
@@ -118,28 +119,10 @@ int main(int argc, char** argv)
 	file.seekg(0L, file.beg); //Zeiger an Anfang von file setzen
 	
 	SpielerAuslesen(mannschaften, anzahlTeams, file);
-	
-	
-	std::cout<<std::setw(32)<<"Name"<<" |";
-	std::cout<<std::setw(12)<<"ID"<<" |";
-	std::cout<<std::setw(5)<<"MMR"<<" |";
-	std::cout<<std::setw(10)<<"downed me"<<" |";
-	std::cout<<std::setw(10)<<"killed me"<<" |";
-	std::cout<<std::setw(12)<<"downed mate"<<" |";
-	std::cout<<std::setw(12)<<"killed mate"<<" |";
-	std::cout<<std::setw(13)<<"downed by me"<<" |";
-	std::cout<<std::setw(13)<<"killed by me"<<" |";
-	std::cout<<std::setw(15)<<"downed by mate"<<" |";
-	std::cout<<std::setw(15)<<"killed by mate"<<" |";
-	std::cout<<std::setw(7)<<"Bounty"<<" |";
-	std::cout<<std::setw(10)<<"Extracted"<<"\n";
-	for(int team = 0; team < anzahlTeams; team++)
-	{
-		std::cout<<"Team "<<team<<":\n";
-		TeamAusgeben(mannschaften[team]);
-	}
 	file.clear();
 	file.seekg(0L, file.beg); //Zeiger an Anfang von file setzen
+	
+	BildschirmAusgabe(mannschaften, anzahlTeams);
 	
 	int assists = AssistsAuslesen(anzahlAuszeichnungen, file);
 	std::cout<<"Erzielte Assists: "<<assists<<"\n\n";
@@ -698,6 +681,57 @@ void SpielerProfilIDLesen(int teamNr, int spielerNr, std::string& Zeile, team* m
 	return;
 }
 
+void BildschirmAusgabe(team* mannschaften, int anzahlTeams)
+{
+	std::cout<<std::setw(56)<<char(218)<<std::setfill(char(196))<<std::setw(20)<<char(194);
+	std::cout<<std::setw(16)<<char(191)<<"\n";
+	std::cout.fill(' ');
+	std::cout<<std::setw(56)<<char(179)<<std::setw(19)<<"Kills       "<<char(179)<<std::setw(15)<<"Deaths    "<<char(179)<<"\n";
+	std::cout.fill(char(196));
+	std::cout<<char(218)<<std::setw(34)<<char(194)<<std::setw(14)<<char(194)<<std::setw(7)<<char(197);
+	std::cout<<std::setw(10)<<char(194)<<std::setw(10)<<char(197);
+	std::cout<<std::setw(8)<<char(194)<<std::setw(8)<<char(197);
+	std::cout<<std::setw(10)<<char(194)<<std::setw(13)<<char(191)<<"\n";
+	
+	std::cout.fill(' ');
+	
+	std::cout<<char(179)<<std::setw(32)<<"Name"<<" "<<char(179);
+	std::cout<<std::setw(12)<<"ID"<<" "<<char(179);
+	std::cout<<std::setw(5)<<"MMR"<<" "<<char(179);
+	std::cout<<std::setw(8)<<"by me "<<" "<<char(179);
+	std::cout<<std::setw(8)<<"by mate"<<" "<<char(179);
+	std::cout<<std::setw(6)<<"me "<<" "<<char(179);
+	std::cout<<std::setw(6)<<"mate"<<" "<<char(179);
+	std::cout<<std::setw(8)<<"Bounty"<<" "<<char(179);
+	std::cout<<std::setw(11)<<"Extracted"<<" "<<char(179)<<"\n";
+	for(int teamNr = 0; teamNr < anzahlTeams; teamNr++)
+	{
+		std::cout.fill(char(196));
+		std::cout<<char(195)<<std::setw(34)<<char(197);
+		std::cout<<std::setw(14)<<char(197);
+		std::cout<<std::setw(7)<<char(197);
+		std::cout<<std::setw(10)<<char(197);
+		std::cout<<std::setw(10)<<char(197);
+		std::cout<<std::setw(8)<<char(197);
+		std::cout<<std::setw(8)<<char(197);
+		std::cout<<std::setw(10)<<char(197);
+		std::cout<<std::setw(13)<<char(180)<<"\n";
+		std::cout.fill(' ');
+		TeamAusgeben(mannschaften[teamNr]);
+	}
+	std::cout.fill(char(196));
+	std::cout<<char(192)<<std::setw(34)<<char(193);
+	std::cout<<std::setw(14)<<char(193);
+	std::cout<<std::setw(7)<<char(193);
+	std::cout<<std::setw(10)<<char(193);
+	std::cout<<std::setw(10)<<char(193);
+	std::cout<<std::setw(8)<<char(193);
+	std::cout<<std::setw(8)<<char(193);
+	std::cout<<std::setw(10)<<char(193);
+	std::cout<<std::setw(13)<<char(217)<<"\n\n";
+	std::cout.fill(' ');
+}
+
 void TeamAusgeben(team mannschaft)
 {
 	for(int i = 0; i < mannschaft.teamGroesse; i++)
@@ -709,74 +743,47 @@ void TeamAusgeben(team mannschaft)
 
 void SpielerAusgeben(player spieler)
 {
-	std::cout<<std::setw(32)<<spieler.name;
-	std::cout<<" |"<<std::setw(12)<<spieler.profileID;
-	std::cout<<" |"<<std::setw(5)<<spieler.mmr;
-	std::cout<<" |"<<std::setw(10);
-	if(spieler.downedMe != 0)
+	int killedByMe = spieler.downedByMe + spieler.killedByMe;
+	int killedByMate = spieler.downedByMate + spieler.killedByMate;
+	int killedMe = spieler.downedMe + spieler.killedMe;
+	int killedMate = spieler.downedMate + spieler.killedMate;
+	
+	std::cout<<char(179)<<std::setw(32)<<spieler.name<<" "<<char(179);
+	std::cout<<std::setw(12)<<spieler.profileID<<" "<<char(179);
+	std::cout<<std::setw(5)<<spieler.mmr<<" "<<char(179);
+	std::cout<<std::setw(8);
+	if(killedByMe != 0)
 	{
-		std::cout<<spieler.downedMe;
+		std::cout<<killedByMe;
 	}else
 	{
 		std::cout<<" ";
 	}
-	std::cout<<" |"<<std::setw(10);
-	if(spieler.killedMe != 0)
+	std::cout<<" "<<char(179)<<std::setw(8);
+	if(killedByMate != 0)
 	{
-		std::cout<<spieler.killedMe;
+		std::cout<<killedByMate;
 	}else
 	{
 		std::cout<<" ";
 	}
-	std::cout<<" |"<<std::setw(12);
-	if(spieler.downedMate != 0)
+	std::cout<<" "<<char(179)<<std::setw(6);
+	if(killedMe != 0)
 	{
-		std::cout<<spieler.downedMate;
+		std::cout<<killedMe;
 	}else
 	{
 		std::cout<<" ";
 	}
-	std::cout<<" |"<<std::setw(12);
-	if(spieler.killedMate != 0)
+	std::cout<<" "<<char(179)<<std::setw(6);
+	if(killedMate != 0)
 	{
-		std::cout<<spieler.killedMate;
+		std::cout<<killedMate;
 	}else
 	{
 		std::cout<<" ";
 	}
-	std::cout<<" |"<<std::setw(13);
-	if(spieler.downedByMe != 0)
-	{
-		std::cout<<spieler.downedByMe;
-	}else
-	{
-		std::cout<<" ";
-	}
-	std::cout<<" |"<<std::setw(13);
-	if(spieler.killedByMe != 0)
-	{
-		std::cout<<spieler.killedByMe;
-	}else
-	{
-		std::cout<<" ";
-	}
-	std::cout<<" |"<<std::setw(15);
-	if(spieler.downedByMate != 0)
-	{
-		std::cout<<spieler.downedByMate;
-	}else
-	{
-		std::cout<<" ";
-	}
-	std::cout<<" |"<<std::setw(15);
-	if(spieler.killedByMate != 0)
-	{
-		std::cout<<spieler.killedByMate;
-	}else
-	{
-		std::cout<<" ";
-	}
-	std::cout<<" |"<<std::setw(7);
+	std::cout<<" "<<char(179)<<std::setw(8);
 	if(spieler.bountyExtracted != 0)
 	{
 		std::cout<<spieler.bountyExtracted;
@@ -784,14 +791,15 @@ void SpielerAusgeben(player spieler)
 	{
 		std::cout<<" ";
 	}
-	std::cout<<" |"<<std::setw(10);
+	std::cout<<" "<<char(179)<<std::setw(11);
 	if(spieler.teamextraction != 0)
 	{
-		std::cout<<spieler.teamextraction<<"\n";
+		std::cout<<spieler.teamextraction;
 	}else
 	{
-		std::cout<<" "<<"\n";
+		std::cout<<" ";
 	}
+	std::cout<<" "<<char(179)<<"\n";
 	return;
 }
 
