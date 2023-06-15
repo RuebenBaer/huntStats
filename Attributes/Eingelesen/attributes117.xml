@@ -1616,59 +1616,59 @@
  <Attr name="MissionAccoladeEntry_15_weighting" value="0"/>
  <Attr name="MissionAccoladeEntry_15_xp" value="0"/>
  <Attr name="MissionAccoladeEntry_1_bloodlineXp" value="0"/>
- <Attr name="MissionAccoladeEntry_1_bounty" value="0"/>
- <Attr name="MissionAccoladeEntry_1_category" value="accolade_monsters_killed"/>
+ <Attr name="MissionAccoladeEntry_1_bounty" value="100"/>
+ <Attr name="MissionAccoladeEntry_1_category" value="accolade_killed_butcher"/>
  <Attr name="MissionAccoladeEntry_1_eventPoints" value="0"/>
  <Attr name="MissionAccoladeEntry_1_gems" value="0"/>
  <Attr name="MissionAccoladeEntry_1_generatedGems" value="1"/>
  <Attr name="MissionAccoladeEntry_1_gold" value="0"/>
- <Attr name="MissionAccoladeEntry_1_header" value="@ui_reward_accolade_monsters_killed"/>
- <Attr name="MissionAccoladeEntry_1_hits" value="48"/>
+ <Attr name="MissionAccoladeEntry_1_header" value="@ui_reward_accolade_target_killed"/>
+ <Attr name="MissionAccoladeEntry_1_hits" value="1"/>
  <Attr name="MissionAccoladeEntry_1_hunterPoints" value="0"/>
  <Attr name="MissionAccoladeEntry_1_hunterXp" value="0"/>
- <Attr name="MissionAccoladeEntry_1_iconPath" value="libs/ui/assets/textures/icons/accolades/category_monsters_killed.dds"/>
+ <Attr name="MissionAccoladeEntry_1_iconPath" value="libs/ui/assets/textures/icons/accolades/killed_butcher.dds"/>
  <Attr name="MissionAccoladeEntry_1_weighting" value="46"/>
- <Attr name="MissionAccoladeEntry_1_xp" value="1050"/>
+ <Attr name="MissionAccoladeEntry_1_xp" value="0"/>
  <Attr name="MissionAccoladeEntry_2" value="1"/>
  <Attr name="MissionAccoladeEntry_2_bloodlineXp" value="0"/>
- <Attr name="MissionAccoladeEntry_2_bounty" value="100"/>
- <Attr name="MissionAccoladeEntry_2_category" value="accolade_killed_butcher"/>
+ <Attr name="MissionAccoladeEntry_2_bounty" value="25"/>
+ <Attr name="MissionAccoladeEntry_2_category" value="accolade_found_butcher"/>
  <Attr name="MissionAccoladeEntry_2_eventPoints" value="0"/>
  <Attr name="MissionAccoladeEntry_2_gems" value="0"/>
- <Attr name="MissionAccoladeEntry_2_generatedGems" value="1"/>
+ <Attr name="MissionAccoladeEntry_2_generatedGems" value="0"/>
  <Attr name="MissionAccoladeEntry_2_gold" value="0"/>
- <Attr name="MissionAccoladeEntry_2_header" value="@ui_reward_accolade_target_killed"/>
+ <Attr name="MissionAccoladeEntry_2_header" value="@ui_reward_accolade_target_found"/>
  <Attr name="MissionAccoladeEntry_2_hits" value="1"/>
  <Attr name="MissionAccoladeEntry_2_hunterPoints" value="0"/>
  <Attr name="MissionAccoladeEntry_2_hunterXp" value="0"/>
- <Attr name="MissionAccoladeEntry_2_iconPath" value="libs/ui/assets/textures/icons/accolades/killed_butcher.dds"/>
- <Attr name="MissionAccoladeEntry_2_weighting" value="46"/>
+ <Attr name="MissionAccoladeEntry_2_iconPath" value="libs/ui/assets/textures/icons/accolades/found_butcher.dds"/>
+ <Attr name="MissionAccoladeEntry_2_weighting" value="40"/>
  <Attr name="MissionAccoladeEntry_2_xp" value="0"/>
  <Attr name="MissionAccoladeEntry_3" value="1"/>
  <Attr name="MissionAccoladeEntry_3_bloodlineXp" value="0"/>
- <Attr name="MissionAccoladeEntry_3_bounty" value="25"/>
- <Attr name="MissionAccoladeEntry_3_category" value="accolade_found_butcher"/>
+ <Attr name="MissionAccoladeEntry_3_bounty" value="0"/>
+ <Attr name="MissionAccoladeEntry_3_category" value="accolade_monsters_killed"/>
  <Attr name="MissionAccoladeEntry_3_eventPoints" value="0"/>
  <Attr name="MissionAccoladeEntry_3_gems" value="0"/>
  <Attr name="MissionAccoladeEntry_3_generatedGems" value="0"/>
  <Attr name="MissionAccoladeEntry_3_gold" value="0"/>
- <Attr name="MissionAccoladeEntry_3_header" value="@ui_reward_accolade_target_found"/>
- <Attr name="MissionAccoladeEntry_3_hits" value="1"/>
+ <Attr name="MissionAccoladeEntry_3_header" value="@ui_reward_accolade_monsters_killed"/>
+ <Attr name="MissionAccoladeEntry_3_hits" value="15"/>
  <Attr name="MissionAccoladeEntry_3_hunterPoints" value="0"/>
  <Attr name="MissionAccoladeEntry_3_hunterXp" value="0"/>
- <Attr name="MissionAccoladeEntry_3_iconPath" value="libs/ui/assets/textures/icons/accolades/found_butcher.dds"/>
- <Attr name="MissionAccoladeEntry_3_weighting" value="40"/>
- <Attr name="MissionAccoladeEntry_3_xp" value="0"/>
+ <Attr name="MissionAccoladeEntry_3_iconPath" value="libs/ui/assets/textures/icons/accolades/category_monsters_killed.dds"/>
+ <Attr name="MissionAccoladeEntry_3_weighting" value="0"/>
+ <Attr name="MissionAccoladeEntry_3_xp" value="290"/>
  <Attr name="MissionAccoladeEntry_4" value="1"/>
  <Attr name="MissionAccoladeEntry_4_bloodlineXp" value="0"/>
- <Attr name="MissionAccoladeEntry_4_bounty" value="200"/>
+ <Attr name="MissionAccoladeEntry_4_bounty" value="100"/>
  <Attr name="MissionAccoladeEntry_4_category" value="accolade_clues_found"/>
  <Attr name="MissionAccoladeEntry_4_eventPoints" value="0"/>
  <Attr name="MissionAccoladeEntry_4_gems" value="0"/>
  <Attr name="MissionAccoladeEntry_4_generatedGems" value="0"/>
  <Attr name="MissionAccoladeEntry_4_gold" value="0"/>
  <Attr name="MissionAccoladeEntry_4_header" value="@ui_reward_accolade_clues_found"/>
- <Attr name="MissionAccoladeEntry_4_hits" value="4"/>
+ <Attr name="MissionAccoladeEntry_4_hits" value="2"/>
  <Attr name="MissionAccoladeEntry_4_hunterPoints" value="0"/>
  <Attr name="MissionAccoladeEntry_4_hunterXp" value="0"/>
  <Attr name="MissionAccoladeEntry_4_iconPath" value="libs/ui/assets/textures/icons/accolades/category_clues_found.dds"/>
@@ -1677,31 +1677,31 @@
  <Attr name="MissionAccoladeEntry_5" value="1"/>
  <Attr name="MissionAccoladeEntry_5_bloodlineXp" value="0"/>
  <Attr name="MissionAccoladeEntry_5_bounty" value="0"/>
- <Attr name="MissionAccoladeEntry_5_category" value="accolade_monsters_killed"/>
+ <Attr name="MissionAccoladeEntry_5_category" value="accolade_reviver"/>
  <Attr name="MissionAccoladeEntry_5_eventPoints" value="0"/>
  <Attr name="MissionAccoladeEntry_5_gems" value="0"/>
  <Attr name="MissionAccoladeEntry_5_generatedGems" value="0"/>
  <Attr name="MissionAccoladeEntry_5_gold" value="0"/>
- <Attr name="MissionAccoladeEntry_5_header" value="@ui_reward_accolade_monsters_killed"/>
- <Attr name="MissionAccoladeEntry_5_hits" value="14"/>
+ <Attr name="MissionAccoladeEntry_5_header" value="@ui_reward_accolade_revived"/>
+ <Attr name="MissionAccoladeEntry_5_hits" value="1"/>
  <Attr name="MissionAccoladeEntry_5_hunterPoints" value="0"/>
  <Attr name="MissionAccoladeEntry_5_hunterXp" value="0"/>
- <Attr name="MissionAccoladeEntry_5_iconPath" value="libs/ui/assets/textures/icons/accolades/category_monsters_killed.dds"/>
+ <Attr name="MissionAccoladeEntry_5_iconPath" value="libs/ui/assets/textures/icons/accolades/team_revive.dds"/>
  <Attr name="MissionAccoladeEntry_5_weighting" value="0"/>
- <Attr name="MissionAccoladeEntry_5_xp" value="280"/>
+ <Attr name="MissionAccoladeEntry_5_xp" value="100"/>
  <Attr name="MissionAccoladeEntry_6" value="1"/>
  <Attr name="MissionAccoladeEntry_6_bloodlineXp" value="0"/>
- <Attr name="MissionAccoladeEntry_6_bounty" value="100"/>
- <Attr name="MissionAccoladeEntry_6_category" value="accolade_clues_found"/>
+ <Attr name="MissionAccoladeEntry_6_bounty" value="0"/>
+ <Attr name="MissionAccoladeEntry_6_category" value="accolade_extraction"/>
  <Attr name="MissionAccoladeEntry_6_eventPoints" value="0"/>
  <Attr name="MissionAccoladeEntry_6_gems" value="0"/>
  <Attr name="MissionAccoladeEntry_6_generatedGems" value="0"/>
  <Attr name="MissionAccoladeEntry_6_gold" value="0"/>
- <Attr name="MissionAccoladeEntry_6_header" value="@ui_reward_accolade_clues_found"/>
- <Attr name="MissionAccoladeEntry_6_hits" value="2"/>
+ <Attr name="MissionAccoladeEntry_6_header" value="@ui_reward_accolade_extraction_solo"/>
+ <Attr name="MissionAccoladeEntry_6_hits" value="1"/>
  <Attr name="MissionAccoladeEntry_6_hunterPoints" value="0"/>
  <Attr name="MissionAccoladeEntry_6_hunterXp" value="0"/>
- <Attr name="MissionAccoladeEntry_6_iconPath" value="libs/ui/assets/textures/icons/accolades/category_clues_found.dds"/>
+ <Attr name="MissionAccoladeEntry_6_iconPath" value="libs/ui/assets/textures/icons/accolades/extraction_solo.dds"/>
  <Attr name="MissionAccoladeEntry_6_weighting" value="0"/>
  <Attr name="MissionAccoladeEntry_6_xp" value="0"/>
  <Attr name="MissionAccoladeEntry_7" value="1"/>
@@ -1753,68 +1753,68 @@
  <Attr name="MissionBagBoss_0" value="true"/>
  <Attr name="MissionBagBoss_1" value="false"/>
  <Attr name="MissionBagBoss_2" value="false"/>
- <Attr name="MissionBagBoss_3" value="true"/>
+ <Attr name="MissionBagBoss_3" value="false"/>
  <Attr name="MissionBagEntry_0" value="1"/>
  <Attr name="MissionBagEntry_0_amount" value="1"/>
  <Attr name="MissionBagEntry_0_category" value="accolade_clues_found"/>
- <Attr name="MissionBagEntry_0_descriptorName" value="clue butcher 3rd"/>
+ <Attr name="MissionBagEntry_0_descriptorName" value="clue butcher 1st"/>
  <Attr name="MissionBagEntry_0_descriptorScore" value="1"/>
  <Attr name="MissionBagEntry_0_descriptorType" value="7"/>
  <Attr name="MissionBagEntry_0_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/boss_butcher.dds"/>
- <Attr name="MissionBagEntry_0_iconPath2" value="libs/ui/assets/textures/icons/accolades/clue_butcher_3rd.dds"/>
+ <Attr name="MissionBagEntry_0_iconPath2" value="libs/ui/assets/textures/icons/accolades/clue_butcher_1st.dds"/>
  <Attr name="MissionBagEntry_0_reward" value="0"/>
  <Attr name="MissionBagEntry_0_rewardSize" value="50"/>
- <Attr name="MissionBagEntry_0_uiName" value="@ui_reward_clue_butcher_3rd"/>
- <Attr name="MissionBagEntry_0_uiName2" value="@ui_reward_accolade_clue_3rd"/>
+ <Attr name="MissionBagEntry_0_uiName" value="@ui_reward_clue_butcher_1st"/>
+ <Attr name="MissionBagEntry_0_uiName2" value="@ui_reward_accolade_clue_1st"/>
  <Attr name="MissionBagEntry_1" value="1"/>
  <Attr name="MissionBagEntry_10" value="1"/>
- <Attr name="MissionBagEntry_10_amount" value="6"/>
- <Attr name="MissionBagEntry_10_category" value="accolade_monsters_killed"/>
- <Attr name="MissionBagEntry_10_descriptorName" value="kill hive"/>
+ <Attr name="MissionBagEntry_10_amount" value="1"/>
+ <Attr name="MissionBagEntry_10_category" value="accolade_hunter_points"/>
+ <Attr name="MissionBagEntry_10_descriptorName" value="hunter points"/>
  <Attr name="MissionBagEntry_10_descriptorScore" value="1"/>
- <Attr name="MissionBagEntry_10_descriptorType" value="2"/>
- <Attr name="MissionBagEntry_10_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/ai_hive.dds"/>
- <Attr name="MissionBagEntry_10_iconPath2" value="libs/ui/assets/textures/icons/accolades/killed_hive.dds"/>
- <Attr name="MissionBagEntry_10_reward" value="2"/>
- <Attr name="MissionBagEntry_10_rewardSize" value="180"/>
- <Attr name="MissionBagEntry_10_uiName" value="@ui_reward_kill_hive"/>
- <Attr name="MissionBagEntry_10_uiName2" value="@ui_reward_accolade_kill_hive"/>
+ <Attr name="MissionBagEntry_10_descriptorType" value="0"/>
+ <Attr name="MissionBagEntry_10_iconPath" value=""/>
+ <Attr name="MissionBagEntry_10_iconPath2" value="libs/ui/assets/textures/icons/accolades/hunter_points.dds"/>
+ <Attr name="MissionBagEntry_10_reward" value="0"/>
+ <Attr name="MissionBagEntry_10_rewardSize" value="8"/>
+ <Attr name="MissionBagEntry_10_uiName" value="@ui_reward_accolade_hunter_points"/>
+ <Attr name="MissionBagEntry_10_uiName2" value="@ui_reward_accolade_hunter_points"/>
  <Attr name="MissionBagEntry_11" value="1"/>
- <Attr name="MissionBagEntry_11_amount" value="2"/>
- <Attr name="MissionBagEntry_11_category" value="accolade_monsters_killed"/>
- <Attr name="MissionBagEntry_11_descriptorName" value="kill armored"/>
- <Attr name="MissionBagEntry_11_descriptorScore" value="1"/>
- <Attr name="MissionBagEntry_11_descriptorType" value="2"/>
- <Attr name="MissionBagEntry_11_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/ai_armored.dds"/>
- <Attr name="MissionBagEntry_11_iconPath2" value="libs/ui/assets/textures/icons/accolades/killed_armored.dds"/>
- <Attr name="MissionBagEntry_11_reward" value="2"/>
- <Attr name="MissionBagEntry_11_rewardSize" value="120"/>
- <Attr name="MissionBagEntry_11_uiName" value="@ui_reward_kill_armored"/>
- <Attr name="MissionBagEntry_11_uiName2" value="@ui_reward_accolade_kill_armored"/>
+ <Attr name="MissionBagEntry_11_amount" value="1"/>
+ <Attr name="MissionBagEntry_11_category" value="accolade_quickplay_extraction"/>
+ <Attr name="MissionBagEntry_11_descriptorName" value="quickplay hunter added contraband"/>
+ <Attr name="MissionBagEntry_11_descriptorScore" value="0"/>
+ <Attr name="MissionBagEntry_11_descriptorType" value="0"/>
+ <Attr name="MissionBagEntry_11_iconPath" value=""/>
+ <Attr name="MissionBagEntry_11_iconPath2" value=""/>
+ <Attr name="MissionBagEntry_11_reward" value="0"/>
+ <Attr name="MissionBagEntry_11_rewardSize" value="0"/>
+ <Attr name="MissionBagEntry_11_uiName" value="@ui_reward_accolade_quickplay_extracted_hunter"/>
+ <Attr name="MissionBagEntry_11_uiName2" value="@ui_reward_accolade_quickplay_extracted_hunter"/>
  <Attr name="MissionBagEntry_12" value="1"/>
  <Attr name="MissionBagEntry_12_amount" value="1"/>
- <Attr name="MissionBagEntry_12_category" value="accolade_monsters_killed"/>
- <Attr name="MissionBagEntry_12_descriptorName" value="kill meathead"/>
+ <Attr name="MissionBagEntry_12_category" value="accolade_players_killed"/>
+ <Attr name="MissionBagEntry_12_descriptorName" value="kill player mm rating 4 stars"/>
  <Attr name="MissionBagEntry_12_descriptorScore" value="1"/>
- <Attr name="MissionBagEntry_12_descriptorType" value="2"/>
- <Attr name="MissionBagEntry_12_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/ai_meathead.dds"/>
- <Attr name="MissionBagEntry_12_iconPath2" value="libs/ui/assets/textures/icons/accolades/killed_meathead.dds"/>
+ <Attr name="MissionBagEntry_12_descriptorType" value="3"/>
+ <Attr name="MissionBagEntry_12_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/killed_player_star_4.dds"/>
+ <Attr name="MissionBagEntry_12_iconPath2" value="libs/ui/assets/textures/icons/accolades/killed_player_star_4.dds"/>
  <Attr name="MissionBagEntry_12_reward" value="2"/>
- <Attr name="MissionBagEntry_12_rewardSize" value="200"/>
- <Attr name="MissionBagEntry_12_uiName" value="@ui_reward_kill_meathead"/>
- <Attr name="MissionBagEntry_12_uiName2" value="@ui_reward_accolade_kill_meathead"/>
+ <Attr name="MissionBagEntry_12_rewardSize" value="450"/>
+ <Attr name="MissionBagEntry_12_uiName" value="@ui_reward_kill_player"/>
+ <Attr name="MissionBagEntry_12_uiName2" value="@ui_reward_kill_player"/>
  <Attr name="MissionBagEntry_13" value="1"/>
- <Attr name="MissionBagEntry_13_amount" value="1"/>
- <Attr name="MissionBagEntry_13_category" value="accolade_monsters_killed"/>
- <Attr name="MissionBagEntry_13_descriptorName" value="kill immolator"/>
+ <Attr name="MissionBagEntry_13_amount" value="2"/>
+ <Attr name="MissionBagEntry_13_category" value="accolade_players_killed"/>
+ <Attr name="MissionBagEntry_13_descriptorName" value="kill player mm rating 5 stars"/>
  <Attr name="MissionBagEntry_13_descriptorScore" value="1"/>
- <Attr name="MissionBagEntry_13_descriptorType" value="2"/>
- <Attr name="MissionBagEntry_13_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/ai_immolator.dds"/>
- <Attr name="MissionBagEntry_13_iconPath2" value="libs/ui/assets/textures/icons/accolades/killed_immolator.dds"/>
+ <Attr name="MissionBagEntry_13_descriptorType" value="3"/>
+ <Attr name="MissionBagEntry_13_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/killed_player_star_5.dds"/>
+ <Attr name="MissionBagEntry_13_iconPath2" value="libs/ui/assets/textures/icons/accolades/killed_player_star_5.dds"/>
  <Attr name="MissionBagEntry_13_reward" value="2"/>
- <Attr name="MissionBagEntry_13_rewardSize" value="50"/>
- <Attr name="MissionBagEntry_13_uiName" value="@ui_reward_kill_immolator"/>
- <Attr name="MissionBagEntry_13_uiName2" value="@ui_reward_accolade_kill_immolator"/>
+ <Attr name="MissionBagEntry_13_rewardSize" value="1000"/>
+ <Attr name="MissionBagEntry_13_uiName" value="@ui_reward_kill_player"/>
+ <Attr name="MissionBagEntry_13_uiName2" value="@ui_reward_kill_player"/>
  <Attr name="MissionBagEntry_14" value="1"/>
  <Attr name="MissionBagEntry_14_amount" value="1"/>
  <Attr name="MissionBagEntry_14_category" value="UNKNOWN"/>
@@ -1889,15 +1889,15 @@
  <Attr name="MissionBagEntry_19_uiName2" value="@ui_reward_accolade_grand_slam"/>
  <Attr name="MissionBagEntry_1_amount" value="1"/>
  <Attr name="MissionBagEntry_1_category" value="accolade_clues_found"/>
- <Attr name="MissionBagEntry_1_descriptorName" value="clue scrapbeak 1st"/>
+ <Attr name="MissionBagEntry_1_descriptorName" value="clue butcher 3rd"/>
  <Attr name="MissionBagEntry_1_descriptorScore" value="1"/>
  <Attr name="MissionBagEntry_1_descriptorType" value="7"/>
- <Attr name="MissionBagEntry_1_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/boss_scrapbeak.dds"/>
- <Attr name="MissionBagEntry_1_iconPath2" value="libs/ui/assets/textures/icons/accolades/clue_1st_found_scrap.dds"/>
+ <Attr name="MissionBagEntry_1_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/boss_butcher.dds"/>
+ <Attr name="MissionBagEntry_1_iconPath2" value="libs/ui/assets/textures/icons/accolades/clue_butcher_3rd.dds"/>
  <Attr name="MissionBagEntry_1_reward" value="0"/>
  <Attr name="MissionBagEntry_1_rewardSize" value="50"/>
- <Attr name="MissionBagEntry_1_uiName" value="@ui_reward_clue_scrapbeak_1st"/>
- <Attr name="MissionBagEntry_1_uiName2" value="@ui_reward_accolade_clue_1st"/>
+ <Attr name="MissionBagEntry_1_uiName" value="@ui_reward_clue_butcher_3rd"/>
+ <Attr name="MissionBagEntry_1_uiName2" value="@ui_reward_accolade_clue_3rd"/>
  <Attr name="MissionBagEntry_2" value="1"/>
  <Attr name="MissionBagEntry_20" value="1"/>
  <Attr name="MissionBagEntry_20_amount" value="1"/>
@@ -2020,16 +2020,16 @@
  <Attr name="MissionBagEntry_29_uiName" value=""/>
  <Attr name="MissionBagEntry_29_uiName2" value=""/>
  <Attr name="MissionBagEntry_2_amount" value="1"/>
- <Attr name="MissionBagEntry_2_category" value="accolade_clues_found"/>
- <Attr name="MissionBagEntry_2_descriptorName" value="clue scrapbeak 2nd"/>
+ <Attr name="MissionBagEntry_2_category" value="accolade_found_butcher"/>
+ <Attr name="MissionBagEntry_2_descriptorName" value="located butcher"/>
  <Attr name="MissionBagEntry_2_descriptorScore" value="1"/>
- <Attr name="MissionBagEntry_2_descriptorType" value="7"/>
- <Attr name="MissionBagEntry_2_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/boss_scrapbeak.dds"/>
- <Attr name="MissionBagEntry_2_iconPath2" value="libs/ui/assets/textures/icons/accolades/clue_2nd_found_scrap.dds"/>
+ <Attr name="MissionBagEntry_2_descriptorType" value="0"/>
+ <Attr name="MissionBagEntry_2_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/boss_butcher.dds"/>
+ <Attr name="MissionBagEntry_2_iconPath2" value="libs/ui/assets/textures/icons/accolades/found_butcher.dds"/>
  <Attr name="MissionBagEntry_2_reward" value="0"/>
- <Attr name="MissionBagEntry_2_rewardSize" value="50"/>
- <Attr name="MissionBagEntry_2_uiName" value="@ui_reward_clue_scrapbeak_2nd"/>
- <Attr name="MissionBagEntry_2_uiName2" value="@ui_reward_accolade_clue_2nd"/>
+ <Attr name="MissionBagEntry_2_rewardSize" value="25"/>
+ <Attr name="MissionBagEntry_2_uiName" value="@ui_reward_locate_butcher"/>
+ <Attr name="MissionBagEntry_2_uiName2" value="@ui_reward_accolade_target_found"/>
  <Attr name="MissionBagEntry_3" value="1"/>
  <Attr name="MissionBagEntry_30" value="1"/>
  <Attr name="MissionBagEntry_30_amount" value="1"/>
@@ -2068,100 +2068,100 @@
  <Attr name="MissionBagEntry_32_uiName" value=""/>
  <Attr name="MissionBagEntry_32_uiName2" value=""/>
  <Attr name="MissionBagEntry_3_amount" value="1"/>
- <Attr name="MissionBagEntry_3_category" value="accolade_clues_found"/>
- <Attr name="MissionBagEntry_3_descriptorName" value="clue scrapbeak 3rd"/>
+ <Attr name="MissionBagEntry_3_category" value="accolade_killed_butcher"/>
+ <Attr name="MissionBagEntry_3_descriptorName" value="kill butcher"/>
  <Attr name="MissionBagEntry_3_descriptorScore" value="1"/>
- <Attr name="MissionBagEntry_3_descriptorType" value="7"/>
- <Attr name="MissionBagEntry_3_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/boss_scrapbeak.dds"/>
- <Attr name="MissionBagEntry_3_iconPath2" value="libs/ui/assets/textures/icons/accolades/clue_3rd_found_scrap.dds"/>
+ <Attr name="MissionBagEntry_3_descriptorType" value="8"/>
+ <Attr name="MissionBagEntry_3_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/boss_butcher.dds"/>
+ <Attr name="MissionBagEntry_3_iconPath2" value="libs/ui/assets/textures/icons/accolades/killed_butcher.dds"/>
  <Attr name="MissionBagEntry_3_reward" value="0"/>
- <Attr name="MissionBagEntry_3_rewardSize" value="50"/>
- <Attr name="MissionBagEntry_3_uiName" value="@ui_reward_clue_scrapbeak_3rd"/>
- <Attr name="MissionBagEntry_3_uiName2" value="@ui_reward_accolade_clue_3rd"/>
+ <Attr name="MissionBagEntry_3_rewardSize" value="100"/>
+ <Attr name="MissionBagEntry_3_uiName" value="@ui_reward_kill_butcher"/>
+ <Attr name="MissionBagEntry_3_uiName2" value="@ui_reward_accolade_target_killed"/>
  <Attr name="MissionBagEntry_4" value="1"/>
  <Attr name="MissionBagEntry_4_amount" value="1"/>
- <Attr name="MissionBagEntry_4_category" value="accolade_found_butcher"/>
- <Attr name="MissionBagEntry_4_descriptorName" value="located butcher"/>
+ <Attr name="MissionBagEntry_4_category" value="accolade_banished_butcher"/>
+ <Attr name="MissionBagEntry_4_descriptorName" value="banish butcher"/>
  <Attr name="MissionBagEntry_4_descriptorScore" value="1"/>
- <Attr name="MissionBagEntry_4_descriptorType" value="0"/>
+ <Attr name="MissionBagEntry_4_descriptorType" value="1"/>
  <Attr name="MissionBagEntry_4_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/boss_butcher.dds"/>
- <Attr name="MissionBagEntry_4_iconPath2" value="libs/ui/assets/textures/icons/accolades/found_butcher.dds"/>
- <Attr name="MissionBagEntry_4_reward" value="0"/>
- <Attr name="MissionBagEntry_4_rewardSize" value="25"/>
- <Attr name="MissionBagEntry_4_uiName" value="@ui_reward_locate_butcher"/>
- <Attr name="MissionBagEntry_4_uiName2" value="@ui_reward_accolade_target_found"/>
+ <Attr name="MissionBagEntry_4_iconPath2" value="libs/ui/assets/textures/icons/accolades/banished_butcher.dds"/>
+ <Attr name="MissionBagEntry_4_reward" value="2"/>
+ <Attr name="MissionBagEntry_4_rewardSize" value="350"/>
+ <Attr name="MissionBagEntry_4_uiName" value="@ui_reward_banish_butcher"/>
+ <Attr name="MissionBagEntry_4_uiName2" value="@ui_reward_accolade_target_banished"/>
  <Attr name="MissionBagEntry_5" value="1"/>
- <Attr name="MissionBagEntry_5_amount" value="1"/>
- <Attr name="MissionBagEntry_5_category" value="accolade_killed_butcher"/>
- <Attr name="MissionBagEntry_5_descriptorName" value="kill butcher"/>
+ <Attr name="MissionBagEntry_5_amount" value="11"/>
+ <Attr name="MissionBagEntry_5_category" value="accolade_monsters_killed"/>
+ <Attr name="MissionBagEntry_5_descriptorName" value="kill grunt"/>
  <Attr name="MissionBagEntry_5_descriptorScore" value="1"/>
- <Attr name="MissionBagEntry_5_descriptorType" value="8"/>
- <Attr name="MissionBagEntry_5_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/boss_butcher.dds"/>
- <Attr name="MissionBagEntry_5_iconPath2" value="libs/ui/assets/textures/icons/accolades/killed_butcher.dds"/>
- <Attr name="MissionBagEntry_5_reward" value="0"/>
- <Attr name="MissionBagEntry_5_rewardSize" value="100"/>
- <Attr name="MissionBagEntry_5_uiName" value="@ui_reward_kill_butcher"/>
- <Attr name="MissionBagEntry_5_uiName2" value="@ui_reward_accolade_target_killed"/>
+ <Attr name="MissionBagEntry_5_descriptorType" value="2"/>
+ <Attr name="MissionBagEntry_5_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/ai_grunt.dds"/>
+ <Attr name="MissionBagEntry_5_iconPath2" value="libs/ui/assets/textures/icons/accolades/killed_grunt.dds"/>
+ <Attr name="MissionBagEntry_5_reward" value="2"/>
+ <Attr name="MissionBagEntry_5_rewardSize" value="110"/>
+ <Attr name="MissionBagEntry_5_uiName" value="@ui_reward_kill_grunt"/>
+ <Attr name="MissionBagEntry_5_uiName2" value="@ui_reward_accolade_kill_grunt"/>
  <Attr name="MissionBagEntry_6" value="1"/>
- <Attr name="MissionBagEntry_6_amount" value="1"/>
- <Attr name="MissionBagEntry_6_category" value="accolade_banished_butcher"/>
- <Attr name="MissionBagEntry_6_descriptorName" value="banish butcher"/>
+ <Attr name="MissionBagEntry_6_amount" value="2"/>
+ <Attr name="MissionBagEntry_6_category" value="accolade_monsters_killed"/>
+ <Attr name="MissionBagEntry_6_descriptorName" value="kill hive"/>
  <Attr name="MissionBagEntry_6_descriptorScore" value="1"/>
- <Attr name="MissionBagEntry_6_descriptorType" value="1"/>
- <Attr name="MissionBagEntry_6_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/boss_butcher.dds"/>
- <Attr name="MissionBagEntry_6_iconPath2" value="libs/ui/assets/textures/icons/accolades/banished_butcher.dds"/>
+ <Attr name="MissionBagEntry_6_descriptorType" value="2"/>
+ <Attr name="MissionBagEntry_6_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/ai_hive.dds"/>
+ <Attr name="MissionBagEntry_6_iconPath2" value="libs/ui/assets/textures/icons/accolades/killed_hive.dds"/>
  <Attr name="MissionBagEntry_6_reward" value="2"/>
- <Attr name="MissionBagEntry_6_rewardSize" value="350"/>
- <Attr name="MissionBagEntry_6_uiName" value="@ui_reward_banish_butcher"/>
- <Attr name="MissionBagEntry_6_uiName2" value="@ui_reward_accolade_target_banished"/>
+ <Attr name="MissionBagEntry_6_rewardSize" value="60"/>
+ <Attr name="MissionBagEntry_6_uiName" value="@ui_reward_kill_hive"/>
+ <Attr name="MissionBagEntry_6_uiName2" value="@ui_reward_accolade_kill_hive"/>
  <Attr name="MissionBagEntry_7" value="1"/>
- <Attr name="MissionBagEntry_7_amount" value="3"/>
+ <Attr name="MissionBagEntry_7_amount" value="2"/>
  <Attr name="MissionBagEntry_7_category" value="accolade_monsters_killed"/>
- <Attr name="MissionBagEntry_7_descriptorName" value="kill leeches"/>
+ <Attr name="MissionBagEntry_7_descriptorName" value="kill armored"/>
  <Attr name="MissionBagEntry_7_descriptorScore" value="1"/>
  <Attr name="MissionBagEntry_7_descriptorType" value="2"/>
- <Attr name="MissionBagEntry_7_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/ai_leech.dds"/>
- <Attr name="MissionBagEntry_7_iconPath2" value="libs/ui/assets/textures/icons/accolades/killed_leech.dds"/>
+ <Attr name="MissionBagEntry_7_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/ai_armored.dds"/>
+ <Attr name="MissionBagEntry_7_iconPath2" value="libs/ui/assets/textures/icons/accolades/killed_armored.dds"/>
  <Attr name="MissionBagEntry_7_reward" value="2"/>
- <Attr name="MissionBagEntry_7_rewardSize" value="30"/>
- <Attr name="MissionBagEntry_7_uiName" value="@ui_reward_kill_leech"/>
- <Attr name="MissionBagEntry_7_uiName2" value="@ui_reward_accolade_kill_leech"/>
+ <Attr name="MissionBagEntry_7_rewardSize" value="120"/>
+ <Attr name="MissionBagEntry_7_uiName" value="@ui_reward_kill_armored"/>
+ <Attr name="MissionBagEntry_7_uiName2" value="@ui_reward_accolade_kill_armored"/>
  <Attr name="MissionBagEntry_8" value="1"/>
- <Attr name="MissionBagEntry_8_amount" value="23"/>
- <Attr name="MissionBagEntry_8_category" value="accolade_monsters_killed"/>
- <Attr name="MissionBagEntry_8_descriptorName" value="kill grunt"/>
- <Attr name="MissionBagEntry_8_descriptorScore" value="1"/>
- <Attr name="MissionBagEntry_8_descriptorType" value="2"/>
- <Attr name="MissionBagEntry_8_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/ai_grunt.dds"/>
- <Attr name="MissionBagEntry_8_iconPath2" value="libs/ui/assets/textures/icons/accolades/killed_grunt.dds"/>
- <Attr name="MissionBagEntry_8_reward" value="2"/>
- <Attr name="MissionBagEntry_8_rewardSize" value="230"/>
- <Attr name="MissionBagEntry_8_uiName" value="@ui_reward_kill_grunt"/>
- <Attr name="MissionBagEntry_8_uiName2" value="@ui_reward_accolade_kill_grunt"/>
+ <Attr name="MissionBagEntry_8_amount" value="1"/>
+ <Attr name="MissionBagEntry_8_category" value="accolade_extraction"/>
+ <Attr name="MissionBagEntry_8_descriptorName" value="successful extraction"/>
+ <Attr name="MissionBagEntry_8_descriptorScore" value="0"/>
+ <Attr name="MissionBagEntry_8_descriptorType" value="0"/>
+ <Attr name="MissionBagEntry_8_iconPath" value=""/>
+ <Attr name="MissionBagEntry_8_iconPath2" value="libs/ui/assets/textures/icons/accolades/category_extraction_team.dds"/>
+ <Attr name="MissionBagEntry_8_reward" value="0"/>
+ <Attr name="MissionBagEntry_8_rewardSize" value="0"/>
+ <Attr name="MissionBagEntry_8_uiName" value="@ui_reward_extract_bounty"/>
+ <Attr name="MissionBagEntry_8_uiName2" value="@ui_reward_accolade_extraction_bonus"/>
  <Attr name="MissionBagEntry_9" value="1"/>
- <Attr name="MissionBagEntry_9_amount" value="12"/>
- <Attr name="MissionBagEntry_9_category" value="accolade_monsters_killed"/>
- <Attr name="MissionBagEntry_9_descriptorName" value="kill hellhound"/>
- <Attr name="MissionBagEntry_9_descriptorScore" value="1"/>
- <Attr name="MissionBagEntry_9_descriptorType" value="2"/>
- <Attr name="MissionBagEntry_9_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/ai_hellhound.dds"/>
- <Attr name="MissionBagEntry_9_iconPath2" value="libs/ui/assets/textures/icons/accolades/killed_hellhound.dds"/>
+ <Attr name="MissionBagEntry_9_amount" value="1"/>
+ <Attr name="MissionBagEntry_9_category" value="accolade_reviver"/>
+ <Attr name="MissionBagEntry_9_descriptorName" value="revive team mate"/>
+ <Attr name="MissionBagEntry_9_descriptorScore" value="0"/>
+ <Attr name="MissionBagEntry_9_descriptorType" value="0"/>
+ <Attr name="MissionBagEntry_9_iconPath" value="libs/ui/assets/textures/icons/death_screen/trigger/player_revive.dds"/>
+ <Attr name="MissionBagEntry_9_iconPath2" value="libs/ui/assets/textures/icons/accolades/team_revive.dds"/>
  <Attr name="MissionBagEntry_9_reward" value="2"/>
- <Attr name="MissionBagEntry_9_rewardSize" value="240"/>
- <Attr name="MissionBagEntry_9_uiName" value="@ui_reward_kill_hellhound"/>
- <Attr name="MissionBagEntry_9_uiName2" value="@ui_reward_accolade_kill_hellhound"/>
+ <Attr name="MissionBagEntry_9_rewardSize" value="100"/>
+ <Attr name="MissionBagEntry_9_uiName" value="@ui_reward_revive_teammate"/>
+ <Attr name="MissionBagEntry_9_uiName2" value="@ui_reward_accolade_revived"/>
  <Attr name="MissionBagFbeGoldBonus" value="0"/>
  <Attr name="MissionBagFbeHunterXpBonus" value="0"/>
- <Attr name="MissionBagIsFbeBonusEnabled" value="false"/>
- <Attr name="MissionBagIsHunterDead" value="true"/>
+ <Attr name="MissionBagIsFbeBonusEnabled" value="true"/>
+ <Attr name="MissionBagIsHunterDead" value="false"/>
  <Attr name="MissionBagIsQuickPlay" value="false"/>
  <Attr name="MissionBagIsTutorial" value="false"/>
- <Attr name="MissionBagNumAccolades" value="5"/>
- <Attr name="MissionBagNumEntries" value="15"/>
+ <Attr name="MissionBagNumAccolades" value="7"/>
+ <Attr name="MissionBagNumEntries" value="11"/>
  <Attr name="MissionBagNumTeams" value="4"/>
- <Attr name="MissionBagPlayer_0_0_blood_line_name" value="Rübenbär"/>
- <Attr name="MissionBagPlayer_0_0_bountyextracted" value="0"/>
- <Attr name="MissionBagPlayer_0_0_bountypickedup" value="0"/>
+ <Attr name="MissionBagPlayer_0_0_blood_line_name" value="Pulse"/>
+ <Attr name="MissionBagPlayer_0_0_bountyextracted" value="1"/>
+ <Attr name="MissionBagPlayer_0_0_bountypickedup" value="1"/>
  <Attr name="MissionBagPlayer_0_0_downedbyme" value="0"/>
  <Attr name="MissionBagPlayer_0_0_downedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_0_0_downedme" value="0"/>
@@ -2173,15 +2173,15 @@
  <Attr name="MissionBagPlayer_0_0_killedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_0_0_killedme" value="0"/>
  <Attr name="MissionBagPlayer_0_0_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_0_0_mmr" value="2737"/>
- <Attr name="MissionBagPlayer_0_0_profileid" value="68719508455"/>
+ <Attr name="MissionBagPlayer_0_0_mmr" value="2704"/>
+ <Attr name="MissionBagPlayer_0_0_profileid" value="8589970420"/>
  <Attr name="MissionBagPlayer_0_0_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_0_0_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_0_0_skillbased" value="true"/>
- <Attr name="MissionBagPlayer_0_0_teamextraction" value="false"/>
+ <Attr name="MissionBagPlayer_0_0_teamextraction" value="true"/>
  <Attr name="MissionBagPlayer_0_0_tooltip_downedbyteammate" value=""/>
- <Attr name="MissionBagPlayer_0_0_tooltipbountyextracted" value=""/>
- <Attr name="MissionBagPlayer_0_0_tooltipbountypickedup" value=""/>
+ <Attr name="MissionBagPlayer_0_0_tooltipbountyextracted" value="@ui_team_details_carried_bounty ~9:53~@ui_team_details_extracted_bounty ~16:38"/>
+ <Attr name="MissionBagPlayer_0_0_tooltipbountypickedup" value="@ui_team_details_carried_bounty ~9:53"/>
  <Attr name="MissionBagPlayer_0_0_tooltipdownedbyme" value=""/>
  <Attr name="MissionBagPlayer_0_0_tooltipdownedme" value=""/>
  <Attr name="MissionBagPlayer_0_0_tooltipdownedteammate" value=""/>
@@ -2189,29 +2189,29 @@
  <Attr name="MissionBagPlayer_0_0_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_0_0_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_0_0_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_0_1_blood_line_name" value="Santoryu"/>
- <Attr name="MissionBagPlayer_0_1_bountyextracted" value="1"/>
- <Attr name="MissionBagPlayer_0_1_bountypickedup" value="1"/>
+ <Attr name="MissionBagPlayer_0_1_blood_line_name" value="Juan Schwartz"/>
+ <Attr name="MissionBagPlayer_0_1_bountyextracted" value="0"/>
+ <Attr name="MissionBagPlayer_0_1_bountypickedup" value="0"/>
  <Attr name="MissionBagPlayer_0_1_downedbyme" value="0"/>
  <Attr name="MissionBagPlayer_0_1_downedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_0_1_downedme" value="0"/>
  <Attr name="MissionBagPlayer_0_1_downedteammate" value="0"/>
  <Attr name="MissionBagPlayer_0_1_hadWellspring" value="false"/>
- <Attr name="MissionBagPlayer_0_1_ispartner" value="true"/>
+ <Attr name="MissionBagPlayer_0_1_ispartner" value="false"/>
  <Attr name="MissionBagPlayer_0_1_issoulsurvivor" value="false"/>
  <Attr name="MissionBagPlayer_0_1_killedbyme" value="0"/>
  <Attr name="MissionBagPlayer_0_1_killedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_0_1_killedme" value="0"/>
  <Attr name="MissionBagPlayer_0_1_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_0_1_mmr" value="2797"/>
- <Attr name="MissionBagPlayer_0_1_profileid" value="64424687109"/>
+ <Attr name="MissionBagPlayer_0_1_mmr" value="2741"/>
+ <Attr name="MissionBagPlayer_0_1_profileid" value="4295137033"/>
  <Attr name="MissionBagPlayer_0_1_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_0_1_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_0_1_skillbased" value="true"/>
- <Attr name="MissionBagPlayer_0_1_teamextraction" value="false"/>
+ <Attr name="MissionBagPlayer_0_1_teamextraction" value="true"/>
  <Attr name="MissionBagPlayer_0_1_tooltip_downedbyteammate" value=""/>
- <Attr name="MissionBagPlayer_0_1_tooltipbountyextracted" value="@ui_team_details_carried_bounty ~6:09~@ui_team_details_extracted_bounty ~16:07"/>
- <Attr name="MissionBagPlayer_0_1_tooltipbountypickedup" value="@ui_team_details_carried_bounty ~6:09"/>
+ <Attr name="MissionBagPlayer_0_1_tooltipbountyextracted" value=""/>
+ <Attr name="MissionBagPlayer_0_1_tooltipbountypickedup" value=""/>
  <Attr name="MissionBagPlayer_0_1_tooltipdownedbyme" value=""/>
  <Attr name="MissionBagPlayer_0_1_tooltipdownedme" value=""/>
  <Attr name="MissionBagPlayer_0_1_tooltipdownedteammate" value=""/>
@@ -2219,29 +2219,29 @@
  <Attr name="MissionBagPlayer_0_1_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_0_1_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_0_1_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_0_2_blood_line_name" value="Prof.Dr.Dr.Chaos"/>
- <Attr name="MissionBagPlayer_0_2_bountyextracted" value="0"/>
+ <Attr name="MissionBagPlayer_0_2_blood_line_name" value="Gear"/>
+ <Attr name="MissionBagPlayer_0_2_bountyextracted" value="1"/>
  <Attr name="MissionBagPlayer_0_2_bountypickedup" value="1"/>
  <Attr name="MissionBagPlayer_0_2_downedbyme" value="0"/>
  <Attr name="MissionBagPlayer_0_2_downedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_0_2_downedme" value="0"/>
  <Attr name="MissionBagPlayer_0_2_downedteammate" value="0"/>
  <Attr name="MissionBagPlayer_0_2_hadWellspring" value="false"/>
- <Attr name="MissionBagPlayer_0_2_ispartner" value="true"/>
+ <Attr name="MissionBagPlayer_0_2_ispartner" value="false"/>
  <Attr name="MissionBagPlayer_0_2_issoulsurvivor" value="false"/>
  <Attr name="MissionBagPlayer_0_2_killedbyme" value="0"/>
  <Attr name="MissionBagPlayer_0_2_killedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_0_2_killedme" value="0"/>
  <Attr name="MissionBagPlayer_0_2_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_0_2_mmr" value="2443"/>
- <Attr name="MissionBagPlayer_0_2_profileid" value="38654774640"/>
+ <Attr name="MissionBagPlayer_0_2_mmr" value="2756"/>
+ <Attr name="MissionBagPlayer_0_2_profileid" value="12885141985"/>
  <Attr name="MissionBagPlayer_0_2_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_0_2_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_0_2_skillbased" value="true"/>
- <Attr name="MissionBagPlayer_0_2_teamextraction" value="false"/>
+ <Attr name="MissionBagPlayer_0_2_teamextraction" value="true"/>
  <Attr name="MissionBagPlayer_0_2_tooltip_downedbyteammate" value=""/>
- <Attr name="MissionBagPlayer_0_2_tooltipbountyextracted" value=""/>
- <Attr name="MissionBagPlayer_0_2_tooltipbountypickedup" value="@ui_team_details_carried_bounty ~6:11"/>
+ <Attr name="MissionBagPlayer_0_2_tooltipbountyextracted" value="@ui_team_details_carried_bounty ~8:48~@ui_team_details_extracted_bounty ~16:38"/>
+ <Attr name="MissionBagPlayer_0_2_tooltipbountypickedup" value="@ui_team_details_carried_bounty ~8:48"/>
  <Attr name="MissionBagPlayer_0_2_tooltipdownedbyme" value=""/>
  <Attr name="MissionBagPlayer_0_2_tooltipdownedme" value=""/>
  <Attr name="MissionBagPlayer_0_2_tooltipdownedteammate" value=""/>
@@ -2249,7 +2249,7 @@
  <Attr name="MissionBagPlayer_0_2_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_0_2_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_0_2_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_10_0_blood_line_name" value="gugugaga i want milk"/>
+ <Attr name="MissionBagPlayer_10_0_blood_line_name" value="UkropUA"/>
  <Attr name="MissionBagPlayer_10_0_bountyextracted" value="0"/>
  <Attr name="MissionBagPlayer_10_0_bountypickedup" value="0"/>
  <Attr name="MissionBagPlayer_10_0_downedbyme" value="0"/>
@@ -2263,8 +2263,8 @@
  <Attr name="MissionBagPlayer_10_0_killedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_10_0_killedme" value="0"/>
  <Attr name="MissionBagPlayer_10_0_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_10_0_mmr" value="2902"/>
- <Attr name="MissionBagPlayer_10_0_profileid" value="81604384178"/>
+ <Attr name="MissionBagPlayer_10_0_mmr" value="2867"/>
+ <Attr name="MissionBagPlayer_10_0_profileid" value="73014555964"/>
  <Attr name="MissionBagPlayer_10_0_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_10_0_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_10_0_skillbased" value="false"/>
@@ -2309,13 +2309,13 @@
  <Attr name="MissionBagPlayer_11_0_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_11_0_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_11_0_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_1_0_blood_line_name" value="Palmoin"/>
+ <Attr name="MissionBagPlayer_1_0_blood_line_name" value="Musapix"/>
  <Attr name="MissionBagPlayer_1_0_bountyextracted" value="0"/>
  <Attr name="MissionBagPlayer_1_0_bountypickedup" value="0"/>
  <Attr name="MissionBagPlayer_1_0_downedbyme" value="0"/>
  <Attr name="MissionBagPlayer_1_0_downedbyteammate" value="0"/>
- <Attr name="MissionBagPlayer_1_0_downedme" value="1"/>
- <Attr name="MissionBagPlayer_1_0_downedteammate" value="0"/>
+ <Attr name="MissionBagPlayer_1_0_downedme" value="0"/>
+ <Attr name="MissionBagPlayer_1_0_downedteammate" value="1"/>
  <Attr name="MissionBagPlayer_1_0_hadWellspring" value="false"/>
  <Attr name="MissionBagPlayer_1_0_ispartner" value="false"/>
  <Attr name="MissionBagPlayer_1_0_issoulsurvivor" value="false"/>
@@ -2323,23 +2323,23 @@
  <Attr name="MissionBagPlayer_1_0_killedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_1_0_killedme" value="0"/>
  <Attr name="MissionBagPlayer_1_0_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_1_0_mmr" value="2689"/>
- <Attr name="MissionBagPlayer_1_0_profileid" value="64424569014"/>
+ <Attr name="MissionBagPlayer_1_0_mmr" value="2727"/>
+ <Attr name="MissionBagPlayer_1_0_profileid" value="68719532586"/>
  <Attr name="MissionBagPlayer_1_0_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_1_0_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_1_0_skillbased" value="true"/>
- <Attr name="MissionBagPlayer_1_0_teamextraction" value="false"/>
+ <Attr name="MissionBagPlayer_1_0_teamextraction" value="true"/>
  <Attr name="MissionBagPlayer_1_0_tooltip_downedbyteammate" value=""/>
  <Attr name="MissionBagPlayer_1_0_tooltipbountyextracted" value=""/>
  <Attr name="MissionBagPlayer_1_0_tooltipbountypickedup" value=""/>
  <Attr name="MissionBagPlayer_1_0_tooltipdownedbyme" value=""/>
- <Attr name="MissionBagPlayer_1_0_tooltipdownedme" value="@ui_team_details_hunter_downed_you ~~@ui_team_details_downed ~14:00"/>
- <Attr name="MissionBagPlayer_1_0_tooltipdownedteammate" value=""/>
+ <Attr name="MissionBagPlayer_1_0_tooltipdownedme" value=""/>
+ <Attr name="MissionBagPlayer_1_0_tooltipdownedteammate" value="@ui_team_details_hunter_downed_teammate ~~@ui_team_details_downed ~16:00"/>
  <Attr name="MissionBagPlayer_1_0_tooltipkilledbyme" value=""/>
  <Attr name="MissionBagPlayer_1_0_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_1_0_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_1_0_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_1_1_blood_line_name" value="Happy PITO"/>
+ <Attr name="MissionBagPlayer_1_1_blood_line_name" value="fredicsem01"/>
  <Attr name="MissionBagPlayer_1_1_bountyextracted" value="0"/>
  <Attr name="MissionBagPlayer_1_1_bountypickedup" value="0"/>
  <Attr name="MissionBagPlayer_1_1_downedbyme" value="0"/>
@@ -2353,12 +2353,12 @@
  <Attr name="MissionBagPlayer_1_1_killedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_1_1_killedme" value="0"/>
  <Attr name="MissionBagPlayer_1_1_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_1_1_mmr" value="2730"/>
- <Attr name="MissionBagPlayer_1_1_profileid" value="38654842979"/>
+ <Attr name="MissionBagPlayer_1_1_mmr" value="2603"/>
+ <Attr name="MissionBagPlayer_1_1_profileid" value="17179892275"/>
  <Attr name="MissionBagPlayer_1_1_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_1_1_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_1_1_skillbased" value="true"/>
- <Attr name="MissionBagPlayer_1_1_teamextraction" value="false"/>
+ <Attr name="MissionBagPlayer_1_1_teamextraction" value="true"/>
  <Attr name="MissionBagPlayer_1_1_tooltip_downedbyteammate" value=""/>
  <Attr name="MissionBagPlayer_1_1_tooltipbountyextracted" value=""/>
  <Attr name="MissionBagPlayer_1_1_tooltipbountypickedup" value=""/>
@@ -2369,7 +2369,7 @@
  <Attr name="MissionBagPlayer_1_1_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_1_1_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_1_1_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_1_2_blood_line_name" value="Macanudo"/>
+ <Attr name="MissionBagPlayer_1_2_blood_line_name" value="kirpich69ru_TV"/>
  <Attr name="MissionBagPlayer_1_2_bountyextracted" value="0"/>
  <Attr name="MissionBagPlayer_1_2_bountypickedup" value="0"/>
  <Attr name="MissionBagPlayer_1_2_downedbyme" value="0"/>
@@ -2383,12 +2383,12 @@
  <Attr name="MissionBagPlayer_1_2_killedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_1_2_killedme" value="0"/>
  <Attr name="MissionBagPlayer_1_2_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_1_2_mmr" value="2657"/>
- <Attr name="MissionBagPlayer_1_2_profileid" value="25769872580"/>
+ <Attr name="MissionBagPlayer_1_2_mmr" value="2791"/>
+ <Attr name="MissionBagPlayer_1_2_profileid" value="81604436569"/>
  <Attr name="MissionBagPlayer_1_2_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_1_2_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_1_2_skillbased" value="true"/>
- <Attr name="MissionBagPlayer_1_2_teamextraction" value="false"/>
+ <Attr name="MissionBagPlayer_1_2_teamextraction" value="true"/>
  <Attr name="MissionBagPlayer_1_2_tooltip_downedbyteammate" value=""/>
  <Attr name="MissionBagPlayer_1_2_tooltipbountyextracted" value=""/>
  <Attr name="MissionBagPlayer_1_2_tooltipbountypickedup" value=""/>
@@ -2399,7 +2399,7 @@
  <Attr name="MissionBagPlayer_1_2_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_1_2_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_1_2_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_2_0_blood_line_name" value="prisonersdilemma"/>
+ <Attr name="MissionBagPlayer_2_0_blood_line_name" value="Prof.Dr.Dr.Chaos"/>
  <Attr name="MissionBagPlayer_2_0_bountyextracted" value="0"/>
  <Attr name="MissionBagPlayer_2_0_bountypickedup" value="0"/>
  <Attr name="MissionBagPlayer_2_0_downedbyme" value="0"/>
@@ -2413,12 +2413,12 @@
  <Attr name="MissionBagPlayer_2_0_killedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_2_0_killedme" value="0"/>
  <Attr name="MissionBagPlayer_2_0_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_2_0_mmr" value="2695"/>
- <Attr name="MissionBagPlayer_2_0_profileid" value="38654800127"/>
+ <Attr name="MissionBagPlayer_2_0_mmr" value="2505"/>
+ <Attr name="MissionBagPlayer_2_0_profileid" value="38654774640"/>
  <Attr name="MissionBagPlayer_2_0_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_2_0_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_2_0_skillbased" value="true"/>
- <Attr name="MissionBagPlayer_2_0_teamextraction" value="false"/>
+ <Attr name="MissionBagPlayer_2_0_teamextraction" value="true"/>
  <Attr name="MissionBagPlayer_2_0_tooltip_downedbyteammate" value=""/>
  <Attr name="MissionBagPlayer_2_0_tooltipbountyextracted" value=""/>
  <Attr name="MissionBagPlayer_2_0_tooltipbountypickedup" value=""/>
@@ -2429,7 +2429,7 @@
  <Attr name="MissionBagPlayer_2_0_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_2_0_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_2_0_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_2_1_blood_line_name" value="† TAMADA †"/>
+ <Attr name="MissionBagPlayer_2_1_blood_line_name" value="Santoryu"/>
  <Attr name="MissionBagPlayer_2_1_bountyextracted" value="0"/>
  <Attr name="MissionBagPlayer_2_1_bountypickedup" value="0"/>
  <Attr name="MissionBagPlayer_2_1_downedbyme" value="0"/>
@@ -2443,12 +2443,12 @@
  <Attr name="MissionBagPlayer_2_1_killedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_2_1_killedme" value="0"/>
  <Attr name="MissionBagPlayer_2_1_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_2_1_mmr" value="2715"/>
- <Attr name="MissionBagPlayer_2_1_profileid" value="4295103392"/>
+ <Attr name="MissionBagPlayer_2_1_mmr" value="2720"/>
+ <Attr name="MissionBagPlayer_2_1_profileid" value="64424687109"/>
  <Attr name="MissionBagPlayer_2_1_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_2_1_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_2_1_skillbased" value="true"/>
- <Attr name="MissionBagPlayer_2_1_teamextraction" value="false"/>
+ <Attr name="MissionBagPlayer_2_1_teamextraction" value="true"/>
  <Attr name="MissionBagPlayer_2_1_tooltip_downedbyteammate" value=""/>
  <Attr name="MissionBagPlayer_2_1_tooltipbountyextracted" value=""/>
  <Attr name="MissionBagPlayer_2_1_tooltipbountypickedup" value=""/>
@@ -2459,7 +2459,7 @@
  <Attr name="MissionBagPlayer_2_1_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_2_1_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_2_1_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_2_2_blood_line_name" value="kukava_d"/>
+ <Attr name="MissionBagPlayer_2_2_blood_line_name" value="Rübenbär"/>
  <Attr name="MissionBagPlayer_2_2_bountyextracted" value="0"/>
  <Attr name="MissionBagPlayer_2_2_bountypickedup" value="0"/>
  <Attr name="MissionBagPlayer_2_2_downedbyme" value="0"/>
@@ -2473,12 +2473,12 @@
  <Attr name="MissionBagPlayer_2_2_killedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_2_2_killedme" value="0"/>
  <Attr name="MissionBagPlayer_2_2_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_2_2_mmr" value="2748"/>
- <Attr name="MissionBagPlayer_2_2_profileid" value="68719521652"/>
+ <Attr name="MissionBagPlayer_2_2_mmr" value="2737"/>
+ <Attr name="MissionBagPlayer_2_2_profileid" value="68719508455"/>
  <Attr name="MissionBagPlayer_2_2_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_2_2_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_2_2_skillbased" value="true"/>
- <Attr name="MissionBagPlayer_2_2_teamextraction" value="false"/>
+ <Attr name="MissionBagPlayer_2_2_teamextraction" value="true"/>
  <Attr name="MissionBagPlayer_2_2_tooltip_downedbyteammate" value=""/>
  <Attr name="MissionBagPlayer_2_2_tooltipbountyextracted" value=""/>
  <Attr name="MissionBagPlayer_2_2_tooltipbountypickedup" value=""/>
@@ -2489,9 +2489,9 @@
  <Attr name="MissionBagPlayer_2_2_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_2_2_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_2_2_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_3_0_blood_line_name" value="Deep Pain"/>
+ <Attr name="MissionBagPlayer_3_0_blood_line_name" value="denis alzgaming"/>
  <Attr name="MissionBagPlayer_3_0_bountyextracted" value="0"/>
- <Attr name="MissionBagPlayer_3_0_bountypickedup" value="1"/>
+ <Attr name="MissionBagPlayer_3_0_bountypickedup" value="0"/>
  <Attr name="MissionBagPlayer_3_0_downedbyme" value="0"/>
  <Attr name="MissionBagPlayer_3_0_downedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_3_0_downedme" value="0"/>
@@ -2503,15 +2503,15 @@
  <Attr name="MissionBagPlayer_3_0_killedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_3_0_killedme" value="0"/>
  <Attr name="MissionBagPlayer_3_0_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_3_0_mmr" value="2440"/>
- <Attr name="MissionBagPlayer_3_0_profileid" value="51539706409"/>
+ <Attr name="MissionBagPlayer_3_0_mmr" value="2632"/>
+ <Attr name="MissionBagPlayer_3_0_profileid" value="60129689762"/>
  <Attr name="MissionBagPlayer_3_0_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_3_0_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_3_0_skillbased" value="true"/>
  <Attr name="MissionBagPlayer_3_0_teamextraction" value="false"/>
  <Attr name="MissionBagPlayer_3_0_tooltip_downedbyteammate" value=""/>
  <Attr name="MissionBagPlayer_3_0_tooltipbountyextracted" value=""/>
- <Attr name="MissionBagPlayer_3_0_tooltipbountypickedup" value="@ui_team_details_carried_bounty ~13:50"/>
+ <Attr name="MissionBagPlayer_3_0_tooltipbountypickedup" value=""/>
  <Attr name="MissionBagPlayer_3_0_tooltipdownedbyme" value=""/>
  <Attr name="MissionBagPlayer_3_0_tooltipdownedme" value=""/>
  <Attr name="MissionBagPlayer_3_0_tooltipdownedteammate" value=""/>
@@ -2519,9 +2519,9 @@
  <Attr name="MissionBagPlayer_3_0_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_3_0_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_3_0_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_3_1_blood_line_name" value="Zynstein"/>
+ <Attr name="MissionBagPlayer_3_1_blood_line_name" value="deanfujiokamaker"/>
  <Attr name="MissionBagPlayer_3_1_bountyextracted" value="0"/>
- <Attr name="MissionBagPlayer_3_1_bountypickedup" value="1"/>
+ <Attr name="MissionBagPlayer_3_1_bountypickedup" value="0"/>
  <Attr name="MissionBagPlayer_3_1_downedbyme" value="0"/>
  <Attr name="MissionBagPlayer_3_1_downedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_3_1_downedme" value="0"/>
@@ -2533,15 +2533,15 @@
  <Attr name="MissionBagPlayer_3_1_killedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_3_1_killedme" value="0"/>
  <Attr name="MissionBagPlayer_3_1_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_3_1_mmr" value="2484"/>
- <Attr name="MissionBagPlayer_3_1_profileid" value="17180044387"/>
+ <Attr name="MissionBagPlayer_3_1_mmr" value="2785"/>
+ <Attr name="MissionBagPlayer_3_1_profileid" value="81604602517"/>
  <Attr name="MissionBagPlayer_3_1_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_3_1_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_3_1_skillbased" value="true"/>
  <Attr name="MissionBagPlayer_3_1_teamextraction" value="false"/>
  <Attr name="MissionBagPlayer_3_1_tooltip_downedbyteammate" value=""/>
  <Attr name="MissionBagPlayer_3_1_tooltipbountyextracted" value=""/>
- <Attr name="MissionBagPlayer_3_1_tooltipbountypickedup" value="@ui_team_details_carried_bounty ~15:28"/>
+ <Attr name="MissionBagPlayer_3_1_tooltipbountypickedup" value=""/>
  <Attr name="MissionBagPlayer_3_1_tooltipdownedbyme" value=""/>
  <Attr name="MissionBagPlayer_3_1_tooltipdownedme" value=""/>
  <Attr name="MissionBagPlayer_3_1_tooltipdownedteammate" value=""/>
@@ -2549,13 +2549,13 @@
  <Attr name="MissionBagPlayer_3_1_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_3_1_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_3_1_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_3_2_blood_line_name" value="Smyle4me"/>
+ <Attr name="MissionBagPlayer_3_2_blood_line_name" value="Lama Yokohama"/>
  <Attr name="MissionBagPlayer_3_2_bountyextracted" value="0"/>
  <Attr name="MissionBagPlayer_3_2_bountypickedup" value="0"/>
  <Attr name="MissionBagPlayer_3_2_downedbyme" value="0"/>
  <Attr name="MissionBagPlayer_3_2_downedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_3_2_downedme" value="0"/>
- <Attr name="MissionBagPlayer_3_2_downedteammate" value="1"/>
+ <Attr name="MissionBagPlayer_3_2_downedteammate" value="0"/>
  <Attr name="MissionBagPlayer_3_2_hadWellspring" value="false"/>
  <Attr name="MissionBagPlayer_3_2_ispartner" value="false"/>
  <Attr name="MissionBagPlayer_3_2_issoulsurvivor" value="false"/>
@@ -2563,8 +2563,8 @@
  <Attr name="MissionBagPlayer_3_2_killedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_3_2_killedme" value="0"/>
  <Attr name="MissionBagPlayer_3_2_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_3_2_mmr" value="2831"/>
- <Attr name="MissionBagPlayer_3_2_profileid" value="12885065067"/>
+ <Attr name="MissionBagPlayer_3_2_mmr" value="2603"/>
+ <Attr name="MissionBagPlayer_3_2_profileid" value="77309626884"/>
  <Attr name="MissionBagPlayer_3_2_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_3_2_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_3_2_skillbased" value="true"/>
@@ -2574,12 +2574,12 @@
  <Attr name="MissionBagPlayer_3_2_tooltipbountypickedup" value=""/>
  <Attr name="MissionBagPlayer_3_2_tooltipdownedbyme" value=""/>
  <Attr name="MissionBagPlayer_3_2_tooltipdownedme" value=""/>
- <Attr name="MissionBagPlayer_3_2_tooltipdownedteammate" value="@ui_team_details_hunter_downed_teammate ~~@ui_team_details_downed ~11:56"/>
+ <Attr name="MissionBagPlayer_3_2_tooltipdownedteammate" value=""/>
  <Attr name="MissionBagPlayer_3_2_tooltipkilledbyme" value=""/>
  <Attr name="MissionBagPlayer_3_2_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_3_2_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_3_2_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_4_0_blood_line_name" value="Örlogsúlfr"/>
+ <Attr name="MissionBagPlayer_4_0_blood_line_name" value="Pioner951"/>
  <Attr name="MissionBagPlayer_4_0_bountyextracted" value="0"/>
  <Attr name="MissionBagPlayer_4_0_bountypickedup" value="0"/>
  <Attr name="MissionBagPlayer_4_0_downedbyme" value="0"/>
@@ -2593,11 +2593,11 @@
  <Attr name="MissionBagPlayer_4_0_killedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_4_0_killedme" value="0"/>
  <Attr name="MissionBagPlayer_4_0_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_4_0_mmr" value="2695"/>
- <Attr name="MissionBagPlayer_4_0_profileid" value="55834597621"/>
+ <Attr name="MissionBagPlayer_4_0_mmr" value="2862"/>
+ <Attr name="MissionBagPlayer_4_0_profileid" value="81604430780"/>
  <Attr name="MissionBagPlayer_4_0_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_4_0_proximitytoteammate" value="false"/>
- <Attr name="MissionBagPlayer_4_0_skillbased" value="false"/>
+ <Attr name="MissionBagPlayer_4_0_skillbased" value="true"/>
  <Attr name="MissionBagPlayer_4_0_teamextraction" value="false"/>
  <Attr name="MissionBagPlayer_4_0_tooltip_downedbyteammate" value=""/>
  <Attr name="MissionBagPlayer_4_0_tooltipbountyextracted" value=""/>
@@ -2609,13 +2609,13 @@
  <Attr name="MissionBagPlayer_4_0_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_4_0_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_4_0_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_4_1_blood_line_name" value="Rübenbär"/>
+ <Attr name="MissionBagPlayer_4_1_blood_line_name" value="Pierre_Dolle"/>
  <Attr name="MissionBagPlayer_4_1_bountyextracted" value="0"/>
  <Attr name="MissionBagPlayer_4_1_bountypickedup" value="0"/>
- <Attr name="MissionBagPlayer_4_1_downedbyme" value="0"/>
+ <Attr name="MissionBagPlayer_4_1_downedbyme" value="1"/>
  <Attr name="MissionBagPlayer_4_1_downedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_4_1_downedme" value="0"/>
- <Attr name="MissionBagPlayer_4_1_downedteammate" value="0"/>
+ <Attr name="MissionBagPlayer_4_1_downedteammate" value="1"/>
  <Attr name="MissionBagPlayer_4_1_hadWellspring" value="false"/>
  <Attr name="MissionBagPlayer_4_1_ispartner" value="false"/>
  <Attr name="MissionBagPlayer_4_1_issoulsurvivor" value="false"/>
@@ -2623,8 +2623,8 @@
  <Attr name="MissionBagPlayer_4_1_killedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_4_1_killedme" value="0"/>
  <Attr name="MissionBagPlayer_4_1_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_4_1_mmr" value="2758"/>
- <Attr name="MissionBagPlayer_4_1_profileid" value="68719508455"/>
+ <Attr name="MissionBagPlayer_4_1_mmr" value="2650"/>
+ <Attr name="MissionBagPlayer_4_1_profileid" value="51539635588"/>
  <Attr name="MissionBagPlayer_4_1_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_4_1_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_4_1_skillbased" value="true"/>
@@ -2632,29 +2632,29 @@
  <Attr name="MissionBagPlayer_4_1_tooltip_downedbyteammate" value=""/>
  <Attr name="MissionBagPlayer_4_1_tooltipbountyextracted" value=""/>
  <Attr name="MissionBagPlayer_4_1_tooltipbountypickedup" value=""/>
- <Attr name="MissionBagPlayer_4_1_tooltipdownedbyme" value=""/>
+ <Attr name="MissionBagPlayer_4_1_tooltipdownedbyme" value="@ui_team_details_you_downed_hunter ~~@ui_team_details_downed ~10:53"/>
  <Attr name="MissionBagPlayer_4_1_tooltipdownedme" value=""/>
- <Attr name="MissionBagPlayer_4_1_tooltipdownedteammate" value=""/>
+ <Attr name="MissionBagPlayer_4_1_tooltipdownedteammate" value="@ui_team_details_hunter_downed_teammate ~~@ui_team_details_downed ~10:37"/>
  <Attr name="MissionBagPlayer_4_1_tooltipkilledbyme" value=""/>
  <Attr name="MissionBagPlayer_4_1_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_4_1_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_4_1_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_4_2_blood_line_name" value="Rübenbär"/>
+ <Attr name="MissionBagPlayer_4_2_blood_line_name" value="77th"/>
  <Attr name="MissionBagPlayer_4_2_bountyextracted" value="0"/>
  <Attr name="MissionBagPlayer_4_2_bountypickedup" value="0"/>
  <Attr name="MissionBagPlayer_4_2_downedbyme" value="0"/>
  <Attr name="MissionBagPlayer_4_2_downedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_4_2_downedme" value="0"/>
- <Attr name="MissionBagPlayer_4_2_downedteammate" value="0"/>
+ <Attr name="MissionBagPlayer_4_2_downedteammate" value="1"/>
  <Attr name="MissionBagPlayer_4_2_hadWellspring" value="false"/>
  <Attr name="MissionBagPlayer_4_2_ispartner" value="false"/>
  <Attr name="MissionBagPlayer_4_2_issoulsurvivor" value="false"/>
  <Attr name="MissionBagPlayer_4_2_killedbyme" value="0"/>
  <Attr name="MissionBagPlayer_4_2_killedbyteammate" value="0"/>
- <Attr name="MissionBagPlayer_4_2_killedme" value="0"/>
+ <Attr name="MissionBagPlayer_4_2_killedme" value="1"/>
  <Attr name="MissionBagPlayer_4_2_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_4_2_mmr" value="2837"/>
- <Attr name="MissionBagPlayer_4_2_profileid" value="68719508455"/>
+ <Attr name="MissionBagPlayer_4_2_mmr" value="2596"/>
+ <Attr name="MissionBagPlayer_4_2_profileid" value="68719683669"/>
  <Attr name="MissionBagPlayer_4_2_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_4_2_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_4_2_skillbased" value="true"/>
@@ -2664,12 +2664,12 @@
  <Attr name="MissionBagPlayer_4_2_tooltipbountypickedup" value=""/>
  <Attr name="MissionBagPlayer_4_2_tooltipdownedbyme" value=""/>
  <Attr name="MissionBagPlayer_4_2_tooltipdownedme" value=""/>
- <Attr name="MissionBagPlayer_4_2_tooltipdownedteammate" value=""/>
+ <Attr name="MissionBagPlayer_4_2_tooltipdownedteammate" value="@ui_team_details_hunter_downed_teammate ~~@ui_team_details_downed ~10:20"/>
  <Attr name="MissionBagPlayer_4_2_tooltipkilledbyme" value=""/>
  <Attr name="MissionBagPlayer_4_2_tooltipkilledbyteammate" value=""/>
- <Attr name="MissionBagPlayer_4_2_tooltipkilledme" value=""/>
+ <Attr name="MissionBagPlayer_4_2_tooltipkilledme" value="@ui_mmr_died_to_hunter ~~@ui_team_details_killed ~11:09"/>
  <Attr name="MissionBagPlayer_4_2_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_5_0_blood_line_name" value="Papa Robertus XIII"/>
+ <Attr name="MissionBagPlayer_5_0_blood_line_name" value="Riviera Kid"/>
  <Attr name="MissionBagPlayer_5_0_bountyextracted" value="0"/>
  <Attr name="MissionBagPlayer_5_0_bountypickedup" value="0"/>
  <Attr name="MissionBagPlayer_5_0_downedbyme" value="0"/>
@@ -2681,10 +2681,10 @@
  <Attr name="MissionBagPlayer_5_0_issoulsurvivor" value="false"/>
  <Attr name="MissionBagPlayer_5_0_killedbyme" value="0"/>
  <Attr name="MissionBagPlayer_5_0_killedbyteammate" value="0"/>
- <Attr name="MissionBagPlayer_5_0_killedme" value="1"/>
+ <Attr name="MissionBagPlayer_5_0_killedme" value="0"/>
  <Attr name="MissionBagPlayer_5_0_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_5_0_mmr" value="2721"/>
- <Attr name="MissionBagPlayer_5_0_profileid" value="25769849828"/>
+ <Attr name="MissionBagPlayer_5_0_mmr" value="2623"/>
+ <Attr name="MissionBagPlayer_5_0_profileid" value="68719605384"/>
  <Attr name="MissionBagPlayer_5_0_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_5_0_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_5_0_skillbased" value="false"/>
@@ -2697,7 +2697,7 @@
  <Attr name="MissionBagPlayer_5_0_tooltipdownedteammate" value=""/>
  <Attr name="MissionBagPlayer_5_0_tooltipkilledbyme" value=""/>
  <Attr name="MissionBagPlayer_5_0_tooltipkilledbyteammate" value=""/>
- <Attr name="MissionBagPlayer_5_0_tooltipkilledme" value="@ui_mmr_died_to_hunter ~~@ui_team_details_killed ~5:58"/>
+ <Attr name="MissionBagPlayer_5_0_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_5_0_tooltipkilledteammate" value=""/>
  <Attr name="MissionBagPlayer_5_1_blood_line_name" value="Senatorninjayen"/>
  <Attr name="MissionBagPlayer_5_1_bountyextracted" value="0"/>
@@ -2729,7 +2729,7 @@
  <Attr name="MissionBagPlayer_5_1_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_5_1_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_5_1_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_6_0_blood_line_name" value="Rübenbär"/>
+ <Attr name="MissionBagPlayer_6_0_blood_line_name" value=":-)"/>
  <Attr name="MissionBagPlayer_6_0_bountyextracted" value="0"/>
  <Attr name="MissionBagPlayer_6_0_bountypickedup" value="0"/>
  <Attr name="MissionBagPlayer_6_0_downedbyme" value="0"/>
@@ -2739,12 +2739,12 @@
  <Attr name="MissionBagPlayer_6_0_hadWellspring" value="false"/>
  <Attr name="MissionBagPlayer_6_0_ispartner" value="false"/>
  <Attr name="MissionBagPlayer_6_0_issoulsurvivor" value="false"/>
- <Attr name="MissionBagPlayer_6_0_killedbyme" value="0"/>
+ <Attr name="MissionBagPlayer_6_0_killedbyme" value="1"/>
  <Attr name="MissionBagPlayer_6_0_killedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_6_0_killedme" value="0"/>
  <Attr name="MissionBagPlayer_6_0_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_6_0_mmr" value="2734"/>
- <Attr name="MissionBagPlayer_6_0_profileid" value="68719508455"/>
+ <Attr name="MissionBagPlayer_6_0_mmr" value="2943"/>
+ <Attr name="MissionBagPlayer_6_0_profileid" value="25769831382"/>
  <Attr name="MissionBagPlayer_6_0_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_6_0_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_6_0_skillbased" value="false"/>
@@ -2755,7 +2755,7 @@
  <Attr name="MissionBagPlayer_6_0_tooltipdownedbyme" value=""/>
  <Attr name="MissionBagPlayer_6_0_tooltipdownedme" value=""/>
  <Attr name="MissionBagPlayer_6_0_tooltipdownedteammate" value=""/>
- <Attr name="MissionBagPlayer_6_0_tooltipkilledbyme" value=""/>
+ <Attr name="MissionBagPlayer_6_0_tooltipkilledbyme" value="@ui_mmr_killed_hunter ~~@ui_team_details_killed ~14:52"/>
  <Attr name="MissionBagPlayer_6_0_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_6_0_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_6_0_tooltipkilledteammate" value=""/>
@@ -2789,7 +2789,7 @@
  <Attr name="MissionBagPlayer_6_1_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_6_1_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_6_1_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_7_0_blood_line_name" value="2nailaz2"/>
+ <Attr name="MissionBagPlayer_7_0_blood_line_name" value="Plusheviy"/>
  <Attr name="MissionBagPlayer_7_0_bountyextracted" value="0"/>
  <Attr name="MissionBagPlayer_7_0_bountypickedup" value="0"/>
  <Attr name="MissionBagPlayer_7_0_downedbyme" value="0"/>
@@ -2799,12 +2799,12 @@
  <Attr name="MissionBagPlayer_7_0_hadWellspring" value="false"/>
  <Attr name="MissionBagPlayer_7_0_ispartner" value="false"/>
  <Attr name="MissionBagPlayer_7_0_issoulsurvivor" value="false"/>
- <Attr name="MissionBagPlayer_7_0_killedbyme" value="0"/>
+ <Attr name="MissionBagPlayer_7_0_killedbyme" value="1"/>
  <Attr name="MissionBagPlayer_7_0_killedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_7_0_killedme" value="0"/>
  <Attr name="MissionBagPlayer_7_0_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_7_0_mmr" value="2533"/>
- <Attr name="MissionBagPlayer_7_0_profileid" value="34359810880"/>
+ <Attr name="MissionBagPlayer_7_0_mmr" value="2867"/>
+ <Attr name="MissionBagPlayer_7_0_profileid" value="77309413937"/>
  <Attr name="MissionBagPlayer_7_0_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_7_0_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_7_0_skillbased" value="false"/>
@@ -2815,11 +2815,11 @@
  <Attr name="MissionBagPlayer_7_0_tooltipdownedbyme" value=""/>
  <Attr name="MissionBagPlayer_7_0_tooltipdownedme" value=""/>
  <Attr name="MissionBagPlayer_7_0_tooltipdownedteammate" value=""/>
- <Attr name="MissionBagPlayer_7_0_tooltipkilledbyme" value=""/>
+ <Attr name="MissionBagPlayer_7_0_tooltipkilledbyme" value="@ui_mmr_killed_hunter ~~@ui_team_details_killed ~5:58"/>
  <Attr name="MissionBagPlayer_7_0_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_7_0_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_7_0_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_8_0_blood_line_name" value="Yarik_Ya"/>
+ <Attr name="MissionBagPlayer_8_0_blood_line_name" value="hugyfolt_kapitany"/>
  <Attr name="MissionBagPlayer_8_0_bountyextracted" value="0"/>
  <Attr name="MissionBagPlayer_8_0_bountypickedup" value="0"/>
  <Attr name="MissionBagPlayer_8_0_downedbyme" value="0"/>
@@ -2829,12 +2829,12 @@
  <Attr name="MissionBagPlayer_8_0_hadWellspring" value="false"/>
  <Attr name="MissionBagPlayer_8_0_ispartner" value="false"/>
  <Attr name="MissionBagPlayer_8_0_issoulsurvivor" value="false"/>
- <Attr name="MissionBagPlayer_8_0_killedbyme" value="0"/>
+ <Attr name="MissionBagPlayer_8_0_killedbyme" value="1"/>
  <Attr name="MissionBagPlayer_8_0_killedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_8_0_killedme" value="0"/>
  <Attr name="MissionBagPlayer_8_0_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_8_0_mmr" value="2233"/>
- <Attr name="MissionBagPlayer_8_0_profileid" value="64424797853"/>
+ <Attr name="MissionBagPlayer_8_0_mmr" value="2698"/>
+ <Attr name="MissionBagPlayer_8_0_profileid" value="77309440178"/>
  <Attr name="MissionBagPlayer_8_0_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_8_0_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_8_0_skillbased" value="false"/>
@@ -2845,11 +2845,11 @@
  <Attr name="MissionBagPlayer_8_0_tooltipdownedbyme" value=""/>
  <Attr name="MissionBagPlayer_8_0_tooltipdownedme" value=""/>
  <Attr name="MissionBagPlayer_8_0_tooltipdownedteammate" value=""/>
- <Attr name="MissionBagPlayer_8_0_tooltipkilledbyme" value=""/>
+ <Attr name="MissionBagPlayer_8_0_tooltipkilledbyme" value="@ui_mmr_killed_hunter ~~@ui_team_details_killed ~2:13"/>
  <Attr name="MissionBagPlayer_8_0_tooltipkilledbyteammate" value=""/>
  <Attr name="MissionBagPlayer_8_0_tooltipkilledme" value=""/>
  <Attr name="MissionBagPlayer_8_0_tooltipkilledteammate" value=""/>
- <Attr name="MissionBagPlayer_9_0_blood_line_name" value="Sorryforthat"/>
+ <Attr name="MissionBagPlayer_9_0_blood_line_name" value="Umri Stoya †"/>
  <Attr name="MissionBagPlayer_9_0_bountyextracted" value="0"/>
  <Attr name="MissionBagPlayer_9_0_bountypickedup" value="0"/>
  <Attr name="MissionBagPlayer_9_0_downedbyme" value="0"/>
@@ -2863,8 +2863,8 @@
  <Attr name="MissionBagPlayer_9_0_killedbyteammate" value="0"/>
  <Attr name="MissionBagPlayer_9_0_killedme" value="0"/>
  <Attr name="MissionBagPlayer_9_0_killedteammate" value="0"/>
- <Attr name="MissionBagPlayer_9_0_mmr" value="2334"/>
- <Attr name="MissionBagPlayer_9_0_profileid" value="21474974489"/>
+ <Attr name="MissionBagPlayer_9_0_mmr" value="2647"/>
+ <Attr name="MissionBagPlayer_9_0_profileid" value="60129736772"/>
  <Attr name="MissionBagPlayer_9_0_proximitytome" value="false"/>
  <Attr name="MissionBagPlayer_9_0_proximitytoteammate" value="false"/>
  <Attr name="MissionBagPlayer_9_0_skillbased" value="false"/>
@@ -2882,15 +2882,15 @@
  <Attr name="MissionBagTeamDetailsVersion" value="6"/>
  <Attr name="MissionBagTeam_0" value="1"/>
  <Attr name="MissionBagTeam_0_handicap" value="0"/>
- <Attr name="MissionBagTeam_0_isinvite" value="true"/>
- <Attr name="MissionBagTeam_0_mmr" value="2708"/>
+ <Attr name="MissionBagTeam_0_isinvite" value="false"/>
+ <Attr name="MissionBagTeam_0_mmr" value="2684"/>
  <Attr name="MissionBagTeam_0_numplayers" value="3"/>
- <Attr name="MissionBagTeam_0_ownteam" value="true"/>
+ <Attr name="MissionBagTeam_0_ownteam" value="false"/>
  <Attr name="MissionBagTeam_1" value="1"/>
  <Attr name="MissionBagTeam_10" value="1"/>
  <Attr name="MissionBagTeam_10_handicap" value="0"/>
  <Attr name="MissionBagTeam_10_isinvite" value="false"/>
- <Attr name="MissionBagTeam_10_mmr" value="2727"/>
+ <Attr name="MissionBagTeam_10_mmr" value="2692"/>
  <Attr name="MissionBagTeam_10_numplayers" value="1"/>
  <Attr name="MissionBagTeam_10_ownteam" value="false"/>
  <Attr name="MissionBagTeam_11" value="1"/>
@@ -2901,55 +2901,55 @@
  <Attr name="MissionBagTeam_11_ownteam" value="false"/>
  <Attr name="MissionBagTeam_1_handicap" value="0"/>
  <Attr name="MissionBagTeam_1_isinvite" value="true"/>
- <Attr name="MissionBagTeam_1_mmr" value="2694"/>
+ <Attr name="MissionBagTeam_1_mmr" value="2721"/>
  <Attr name="MissionBagTeam_1_numplayers" value="3"/>
  <Attr name="MissionBagTeam_1_ownteam" value="false"/>
  <Attr name="MissionBagTeam_2" value="1"/>
  <Attr name="MissionBagTeam_2_handicap" value="0"/>
- <Attr name="MissionBagTeam_2_isinvite" value="false"/>
- <Attr name="MissionBagTeam_2_mmr" value="2670"/>
+ <Attr name="MissionBagTeam_2_isinvite" value="true"/>
+ <Attr name="MissionBagTeam_2_mmr" value="2678"/>
  <Attr name="MissionBagTeam_2_numplayers" value="3"/>
- <Attr name="MissionBagTeam_2_ownteam" value="false"/>
+ <Attr name="MissionBagTeam_2_ownteam" value="true"/>
  <Attr name="MissionBagTeam_3" value="1"/>
  <Attr name="MissionBagTeam_3_handicap" value="0"/>
  <Attr name="MissionBagTeam_3_isinvite" value="true"/>
- <Attr name="MissionBagTeam_3_mmr" value="2670"/>
+ <Attr name="MissionBagTeam_3_mmr" value="2690"/>
  <Attr name="MissionBagTeam_3_numplayers" value="3"/>
  <Attr name="MissionBagTeam_3_ownteam" value="false"/>
  <Attr name="MissionBagTeam_4" value="1"/>
  <Attr name="MissionBagTeam_4_handicap" value="0"/>
- <Attr name="MissionBagTeam_4_isinvite" value="false"/>
- <Attr name="MissionBagTeam_4_mmr" value="2520"/>
- <Attr name="MissionBagTeam_4_numplayers" value="1"/>
+ <Attr name="MissionBagTeam_4_isinvite" value="true"/>
+ <Attr name="MissionBagTeam_4_mmr" value="2738"/>
+ <Attr name="MissionBagTeam_4_numplayers" value="3"/>
  <Attr name="MissionBagTeam_4_ownteam" value="false"/>
  <Attr name="MissionBagTeam_5" value="1"/>
  <Attr name="MissionBagTeam_5_handicap" value="0"/>
  <Attr name="MissionBagTeam_5_isinvite" value="false"/>
- <Attr name="MissionBagTeam_5_mmr" value="2546"/>
+ <Attr name="MissionBagTeam_5_mmr" value="2448"/>
  <Attr name="MissionBagTeam_5_numplayers" value="1"/>
  <Attr name="MissionBagTeam_5_ownteam" value="false"/>
  <Attr name="MissionBagTeam_6" value="1"/>
  <Attr name="MissionBagTeam_6_handicap" value="0"/>
  <Attr name="MissionBagTeam_6_isinvite" value="false"/>
- <Attr name="MissionBagTeam_6_mmr" value="2559"/>
+ <Attr name="MissionBagTeam_6_mmr" value="2768"/>
  <Attr name="MissionBagTeam_6_numplayers" value="1"/>
- <Attr name="MissionBagTeam_6_ownteam" value="true"/>
+ <Attr name="MissionBagTeam_6_ownteam" value="false"/>
  <Attr name="MissionBagTeam_7" value="1"/>
  <Attr name="MissionBagTeam_7_handicap" value="0"/>
  <Attr name="MissionBagTeam_7_isinvite" value="false"/>
- <Attr name="MissionBagTeam_7_mmr" value="2388"/>
+ <Attr name="MissionBagTeam_7_mmr" value="2692"/>
  <Attr name="MissionBagTeam_7_numplayers" value="1"/>
  <Attr name="MissionBagTeam_7_ownteam" value="false"/>
  <Attr name="MissionBagTeam_8" value="1"/>
  <Attr name="MissionBagTeam_8_handicap" value="0"/>
  <Attr name="MissionBagTeam_8_isinvite" value="false"/>
- <Attr name="MissionBagTeam_8_mmr" value="2058"/>
+ <Attr name="MissionBagTeam_8_mmr" value="2523"/>
  <Attr name="MissionBagTeam_8_numplayers" value="1"/>
  <Attr name="MissionBagTeam_8_ownteam" value="false"/>
  <Attr name="MissionBagTeam_9" value="1"/>
  <Attr name="MissionBagTeam_9_handicap" value="0"/>
  <Attr name="MissionBagTeam_9_isinvite" value="false"/>
- <Attr name="MissionBagTeam_9_mmr" value="2159"/>
+ <Attr name="MissionBagTeam_9_mmr" value="2472"/>
  <Attr name="MissionBagTeam_9_numplayers" value="1"/>
  <Attr name="MissionBagTeam_9_ownteam" value="false"/>
  <Attr name="MissionBagWasDeathlessUsed" value="false"/>
@@ -2991,7 +2991,7 @@
  <Attr name="NewsFeed/Item_ID1607046998" value="true"/>
  <Attr name="NewsFeed/Item_ID1611356387" value="true"/>
  <Attr name="NewsFeed/Item_ID1628081851" value="true"/>
- <Attr name="NewsFeed/Item_ID174214259" value="false"/>
+ <Attr name="NewsFeed/Item_ID174214259" value="true"/>
  <Attr name="NewsFeed/Item_ID1762628146" value="true"/>
  <Attr name="NewsFeed/Item_ID1783189876" value="false"/>
  <Attr name="NewsFeed/Item_ID1799246857" value="true"/>
@@ -3051,7 +3051,7 @@
  <Attr name="NewsFeed/Item_ID2966005860" value="false"/>
  <Attr name="NewsFeed/Item_ID3003232740" value="true"/>
  <Attr name="NewsFeed/Item_ID3026375912" value="false"/>
- <Attr name="NewsFeed/Item_ID3052626148" value="false"/>
+ <Attr name="NewsFeed/Item_ID3052626148" value="true"/>
  <Attr name="NewsFeed/Item_ID3055462860" value="false"/>
  <Attr name="NewsFeed/Item_ID3055964941" value="false"/>
  <Attr name="NewsFeed/Item_ID318036330" value="true"/>
@@ -3117,7 +3117,7 @@
  <Attr name="NewsFeed/Item_ID545956206" value="false"/>
  <Attr name="NewsFeed/Item_ID564145792" value="true"/>
  <Attr name="NewsFeed/Item_ID59193499" value="false"/>
- <Attr name="NewsFeed/Item_ID609017045" value="false"/>
+ <Attr name="NewsFeed/Item_ID609017045" value="true"/>
  <Attr name="NewsFeed/Item_ID612206251" value="false"/>
  <Attr name="NewsFeed/Item_ID616731937" value="true"/>
  <Attr name="NewsFeed/Item_ID630974160" value="true"/>
@@ -3138,7 +3138,7 @@
  <Attr name="OpenActiveDailies" value="0"/>
  <Attr name="OpenActiveQuests" value="0"/>
  <Attr name="OptionsOpenedFromPauseMenu" value="1"/>
- <Attr name="PCLevelLoadingTimeMissionUnload" value="50"/>
+ <Attr name="PCLevelLoadingTimeMissionUnload" value="54"/>
  <Attr name="PC_aim_1" value="257"/>
  <Attr name="PC_aim_2" value="-1"/>
  <Attr name="PC_aim_ToggleMode" value="1"/>
