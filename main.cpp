@@ -59,6 +59,10 @@ void BildschirmAusgabe(team* mannschaften, int anzahlTeams);
 void TeamAusgeben(team mannschaft);
 void SpielerAusgeben(player spieler);
 
+bool DateiAusgabe(team* mannschaften, int anzahlTeams, int assists);
+void TeamAusgebenDatei(team mannschaft, std::ofstream& ausgabe);
+void SpielerAusgebenDatei(player spieler, std::ofstream& ausgabe);
+
 void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists, std::string strIch);
 
 int AssistsAuslesen(int anzahlAuszeichnungen, std::ifstream& file);
@@ -163,6 +167,9 @@ match SpielAuslesen(char* DateiName)
 	
 	aktSpiel.assists = AssistsAuslesen(anzahlAuszeichnungen, file);
 	std::cout<<"Erzielte Assists: "<<aktSpiel.assists<<"\n\n";
+	
+	DateiAusgabe(aktSpiel.Mannschaften, aktSpiel.anzahlTeams, aktSpiel.assists);
+	
 	file.close();
 
 	return aktSpiel;
@@ -829,8 +836,8 @@ void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists, std::stri
 	std::ofstream ausgabe("./huntStatistik.csv", std::ios::out|std::ios::app|std::ios::ate);
 	if(ausgabe.tellp() == ausgabe.beg)
 	{
-		ausgabe<<"Ich; MMR; Kills; Tode; Assists; Partner 1; MMR; Partner 2;";
-		ausgabe<<"MMR; Extraction; Bounty; Kills (Team); Tode (Team); Gegner|MMR;\n";
+		ausgabe<<"Ich;MMR;Kills;Tode;Assists;Partner 1;MMR;Partner 2;";
+		ausgabe<<"MMR;Extraction;Bounty;Kills (Team);Tode (Team);Gegner-MMR ('+' = killed by me | '-' = killed me);\n";
 	}
 	int teamDeaths, teamKills;
 	int myDeaths, myKills;
@@ -894,10 +901,155 @@ void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists, std::stri
 		for(int spieler = 0; spieler < mannschaft[team].teamGroesse; spieler++)
 		{
 			aktSpieler = mannschaft[team].teamMitglieder[spieler];
-			ausgabe<<aktSpieler.name<<";"<<aktSpieler.mmr<<";";
+			int killCount = 0;
+			while(killCount < (aktSpieler.downedByMe + aktSpieler.killedByMe))
+			{
+				ausgabe<<"+"<<aktSpieler.mmr<<";";
+				killCount++;
+			}
+			killCount = 0;
+			while(killCount < (aktSpieler.downedMe + aktSpieler.killedMe))
+			{
+				ausgabe<<"-"<<aktSpieler.mmr<<";";
+				killCount++;
+			}
 		}
 	}
 	ausgabe<<"\n";
 	ausgabe.close();
+	return;
+}
+
+bool DateiAusgabe(team* mannschaften, int anzahlTeams, int assists)
+{
+	std::ofstream ausgabe;
+	ausgabe.open("./BildschirmSpiegel.txt", std::ios::out|std::ios::app|std::ios::ate);
+	if(!ausgabe.good())
+	{
+		std::cerr<<"Bildschirmspiegel konnte nicht geoeffnet werden\n";
+		return false;
+	}
+	
+	ausgabe<<std::setw(56)<< char(43) <<std::setfill(char(45))<<std::setw(20)<<char(43);
+	ausgabe<<std::setw(16)<<char(43)<<"\n";
+	ausgabe.fill(' ');
+	ausgabe<<std::setw(56)<<char(124)<<std::setw(19)<<"Kills       "<<char(124)<<std::setw(15)<<"Deaths    "<<char(124)<<"\n";
+	ausgabe.fill(char(45));
+	ausgabe<<char(43)<<std::setw(34)<<char(43)<<std::setw(14)<<char(43)<<std::setw(7)<<char(43);
+	ausgabe<<std::setw(10)<<char(43)<<std::setw(10)<<char(43);
+	ausgabe<<std::setw(8)<<char(43)<<std::setw(8)<<char(43);
+	ausgabe<<std::setw(10)<<char(43)<<std::setw(13)<<char(43)<<"\n";
+	
+	ausgabe.fill(' ');
+	
+	ausgabe<<char(124)<<std::setw(32)<<"Name"<<" "<<char(124);
+	ausgabe<<std::setw(12)<<"ID"<<" "<<char(124);
+	ausgabe<<std::setw(5)<<"MMR"<<" "<<char(124);
+	ausgabe<<std::setw(8)<<"by me "<<" "<<char(124);
+	ausgabe<<std::setw(8)<<"by mate"<<" "<<char(124);
+	ausgabe<<std::setw(6)<<"me "<<" "<<char(124);
+	ausgabe<<std::setw(6)<<"mate"<<" "<<char(124);
+	ausgabe<<std::setw(8)<<"Bounty"<<" "<<char(124);
+	ausgabe<<std::setw(11)<<"Extracted"<<" "<<char(124)<<"\n";
+	for(int teamNr = 0; teamNr < anzahlTeams; teamNr++)
+	{
+		ausgabe.fill(char(45));
+		ausgabe<<char(43)<<std::setw(34)<<char(43);
+		ausgabe<<std::setw(14)<<char(43);
+		ausgabe<<std::setw(7)<<char(43);
+		ausgabe<<std::setw(10)<<char(43);
+		ausgabe<<std::setw(10)<<char(43);
+		ausgabe<<std::setw(8)<<char(43);
+		ausgabe<<std::setw(8)<<char(43);
+		ausgabe<<std::setw(10)<<char(43);
+		ausgabe<<std::setw(13)<<char(43)<<"\n";
+		ausgabe.fill(' ');
+		TeamAusgebenDatei(mannschaften[teamNr], ausgabe);
+	}
+	ausgabe.fill(char(45));
+	ausgabe<<char(43)<<std::setw(34)<<char(43);
+	ausgabe<<std::setw(14)<<char(43);
+	ausgabe<<std::setw(7)<<char(43);
+	ausgabe<<std::setw(10)<<char(43);
+	ausgabe<<std::setw(10)<<char(43);
+	ausgabe<<std::setw(8)<<char(43);
+	ausgabe<<std::setw(8)<<char(43);
+	ausgabe<<std::setw(10)<<char(43);
+	ausgabe<<std::setw(13)<<char(43)<<"\n\n";
+	ausgabe.fill(' ');
+	
+	ausgabe<<"Assists: "<<assists<<"\n\n";
+	
+	return true;
+}
+
+void TeamAusgebenDatei(team mannschaft, std::ofstream& ausgabe)
+{
+	for(int i = 0; i < mannschaft.teamGroesse; i++)
+	{
+		SpielerAusgebenDatei(mannschaft.teamMitglieder[i], ausgabe);
+	}
+	return;
+}
+
+void SpielerAusgebenDatei(player spieler, std::ofstream& ausgabe)
+{
+	int killedByMe = spieler.downedByMe + spieler.killedByMe;
+	int killedByMate = spieler.downedByMate + spieler.killedByMate;
+	int killedMe = spieler.downedMe + spieler.killedMe;
+	int killedMate = spieler.downedMate + spieler.killedMate;
+	
+	ausgabe<<char(124)<<std::setw(32)<<spieler.name<<" "<<char(124);
+	ausgabe<<std::setw(12)<<spieler.profileID<<" "<<char(124);
+	ausgabe<<std::setw(5)<<spieler.mmr<<" "<<char(124);
+	ausgabe<<std::setw(8);
+	if(killedByMe != 0)
+	{
+		ausgabe<<killedByMe;
+	}else
+	{
+		ausgabe<<" ";
+	}
+	ausgabe<<" "<<char(124)<<std::setw(8);
+	if(killedByMate != 0)
+	{
+		ausgabe<<killedByMate;
+	}else
+	{
+		ausgabe<<" ";
+	}
+	ausgabe<<" "<<char(124)<<std::setw(6);
+	if(killedMe != 0)
+	{
+		ausgabe<<killedMe;
+	}else
+	{
+		ausgabe<<" ";
+	}
+	ausgabe<<" "<<char(124)<<std::setw(6);
+	if(killedMate != 0)
+	{
+		ausgabe<<killedMate;
+	}else
+	{
+		ausgabe<<" ";
+	}
+	ausgabe<<" "<<char(124)<<std::setw(8);
+	if(spieler.bountyExtracted != 0)
+	{
+		ausgabe<<spieler.bountyExtracted;
+	}else
+	{
+		ausgabe<<" ";
+	}
+	ausgabe<<" "<<char(124)<<std::setw(11);
+	if(spieler.teamextraction != 0)
+	{
+		ausgabe<<spieler.teamextraction;
+	}else
+	{
+		ausgabe<<" ";
+	}
+	ausgabe<<" "<<char(124)<<"\n";
 	return;
 }
