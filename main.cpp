@@ -29,6 +29,14 @@ typedef struct{
 	bool ownTeam;
 }team;
 
+typedef struct{
+	team Mannschaften[12];
+	int anzahlTeams;
+	int assists;
+}match;
+
+match SpielAuslesen(char* DateiName);
+
 int AnzahlAuszeichnungenAuslesen(std::ifstream& file);
 int AnzahlTeamsAuslesen(std::ifstream& file);
 bool TeamGroessenAuslesen(team* mannschaften, int anzahlTeams, std::ifstream& file);
@@ -66,7 +74,7 @@ int main(int argc, char** argv)
 		return 1;
 	}
 	
-	file.open(".\\MeinName.txt", std::ios::in);
+	file.open(".\\huntstats.cfg", std::ios::in);
 	char leseZeile[256];
 	if(file.good())
 	{
@@ -80,69 +88,84 @@ int main(int argc, char** argv)
 		system("PAUSE");
 		return EXIT_FAILURE;
 	}
-	std::cout<<"Versuche "<<argv[1]<<" zu oeffnen\n";
-	file.open(argv[1], std::ios::in);
+
+	std::string antwort;
+	bool speichern;
+	std::cout<<"Ergebnis(se) speichern? [j/n]: ";
+	std::cin>>antwort;
+	if(antwort.compare("j") == 0)
+	{
+		std::cout<<"Ergebnis wird gespeichert\n";
+		speichern = true;
+	}
+	else
+	{
+		std::cout<<"Keine Speicherung der Ergebnisse\n";
+		speichern = false;
+	}
+	
+	match aktSpiel;
+	for(int i = 1; i < argc;i++)
+	{
+		aktSpiel = SpielAuslesen(argv[i]);
+		if(speichern) ErgebnisSpeichern(aktSpiel.Mannschaften, aktSpiel.anzahlTeams, aktSpiel.assists, strIch);
+	}
+	
+	system("PAUSE");
+	return 0;
+}
+
+match SpielAuslesen(char* DateiName)
+{
+	match aktSpiel;
+	std::ifstream file;
+	
+	std::cout<<"Versuche "<<DateiName<<" zu oeffnen...";
+	file.open(DateiName, std::ios::in);
 	
 	if(!file.good())
 	{
 		std::cout<<"Klappt nicht\n";
 		system("PAUSE");
-		return EXIT_FAILURE;
+		return aktSpiel;
 	}
-	std::cout<<argv[1]<<" geoeffnet\n";
+	std::cout<<"geoeffnet\n";
 
 	int anzahlAuszeichnungen = AnzahlAuszeichnungenAuslesen(file);
-	std::cout<<anzahlAuszeichnungen<<" Auszeichnungen vergeben\n";
+	//std::cout<<anzahlAuszeichnungen<<" Auszeichnungen vergeben\n";
 	file.clear();
 	file.seekg(0L, file.beg); //Zeiger an Anfang von file setzen
 	
-	int anzahlTeams = AnzahlTeamsAuslesen(file);
-	if(anzahlTeams == 0)
+	aktSpiel.anzahlTeams = AnzahlTeamsAuslesen(file);
+	if(aktSpiel.anzahlTeams == 0)
 	{
 		std::cout<<"Anzahl der Teams nicht gefunden => Abbruch\n";
 		system("PAUSE");
-		return EXIT_FAILURE;
+		return aktSpiel;
 	}
-	std::cout<<"Anzahlteams ausgelesen\n";
 	file.clear();
 	file.seekg(0L, file.beg); //Zeiger an Anfang von file setzen
 
-	team* mannschaften = new team[anzahlTeams];
-	if(!TeamGroessenAuslesen(mannschaften, anzahlTeams, file))
+	if(!TeamGroessenAuslesen(aktSpiel.Mannschaften, aktSpiel.anzahlTeams, file))
 	{
 		std::cout<<"Auslesen der Teamgroesse fehlgeschlagen => Abbruch\n";
 		system("PAUSE");
-		return EXIT_FAILURE;
+		return aktSpiel;
 	}
-	std::cout<<"Teamgroessen ausgelesen\n";
 	file.clear();
 	file.seekg(0L, file.beg); //Zeiger an Anfang von file setzen
 	
-	SpielerAuslesen(mannschaften, anzahlTeams, file);
+	SpielerAuslesen(aktSpiel.Mannschaften, aktSpiel.anzahlTeams, file);
 	file.clear();
 	file.seekg(0L, file.beg); //Zeiger an Anfang von file setzen
 	
-	BildschirmAusgabe(mannschaften, anzahlTeams);
+	BildschirmAusgabe(aktSpiel.Mannschaften, aktSpiel.anzahlTeams);
 	
-	int assists = AssistsAuslesen(anzahlAuszeichnungen, file);
-	std::cout<<"Erzielte Assists: "<<assists<<"\n\n";
+	aktSpiel.assists = AssistsAuslesen(anzahlAuszeichnungen, file);
+	std::cout<<"Erzielte Assists: "<<aktSpiel.assists<<"\n\n";
 	file.close();
-	
-	std::string antwort;
-	std::cout<<"Ergebnis speichern? [j/n]: ";
-	std::cin>>antwort;
-	if(antwort.compare("j") == 0)
-	{
-		std::cout<<"Ergebnis wird gespeichert\n";
-		ErgebnisSpeichern(mannschaften, anzahlTeams, assists, strIch);
-	}
-	else
-	{
-		std::cout<<"keine Speicherung\neinen schönen Tag noch\n";
-	}
 
-	delete []mannschaften;
-	return 0;
+	return aktSpiel;
 }
 
 int AssistsAuslesen(int anzahlAuszeichnungen, std::ifstream& file)
@@ -172,7 +195,6 @@ int AssistsAuslesen(int anzahlAuszeichnungen, std::ifstream& file)
 					lfdNr = std::atoi(subZeile.c_str());
 					if(lfdNr < anzahlAuszeichnungen)
 					{
-						std::cout<<"lfdNr: "<<lfdNr<<" anzahlAuszeichnungen: "<<anzahlAuszeichnungen<<"\n";
 						suchBegriff = "<Attr name=\"MissionAccoladeEntry_";
 						suchBegriff += std::to_string(lfdNr);
 						NrGefunden = true;
@@ -194,7 +216,6 @@ int AssistsAuslesen(int anzahlAuszeichnungen, std::ifstream& file)
 					{
 						subZeile = Zeile.substr(found, foundEnde - found);
 						anzahlAssists = std::atoi(subZeile.c_str());
-						std::cout<<"Assists: "<<anzahlAssists<<" ("<<subZeile<<")\n";
 						return anzahlAssists;
 					}
 				}
@@ -809,7 +830,7 @@ void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists, std::stri
 	if(ausgabe.tellp() == ausgabe.beg)
 	{
 		ausgabe<<"Ich; MMR; Kills; Tode; Assists; Partner 1; MMR; Partner 2;";
-		ausgabe<<"MMR; Extraction; Bounty; Kills (Team); Tode (Team); Gegner|MMR;";
+		ausgabe<<"MMR; Extraction; Bounty; Kills (Team); Tode (Team); Gegner|MMR;\n";
 	}
 	int teamDeaths, teamKills;
 	int myDeaths, myKills;
