@@ -33,14 +33,15 @@ typedef struct{
 	team Mannschaften[12];
 	int anzahlTeams;
 	int assists;
+	int eigeneMMR;
 }match;
 
-match SpielAuslesen(char* DateiName);
+match SpielAuslesen(char* DateiName, std::string strIch);
 
 int AnzahlAuszeichnungenAuslesen(std::ifstream& file);
 int AnzahlTeamsAuslesen(std::ifstream& file);
 bool TeamGroessenAuslesen(team* mannschaften, int anzahlTeams, std::ifstream& file);
-void SpielerAuslesen(team* mannschaften, int anzahlTeams, std::ifstream& file);
+void SpielerAuslesen(match& aktSpiel, std::ifstream& file, std::string strIch);
 void SpielerNameLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften);
 void SpielerExtractionLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften);
 void SpielerBountyLesen(int teamNr, int spielerNr, std::string& Zeile, team* mannschaften);
@@ -59,13 +60,25 @@ void BildschirmAusgabe(team* mannschaften, int anzahlTeams);
 void TeamAusgeben(team mannschaft);
 void SpielerAusgeben(player spieler);
 
-bool DateiAusgabe(team* mannschaften, int anzahlTeams, int assists);
+bool DateiAusgabe(team* mannschaften, int anzahlTeams, int assists, int dMMR);
 void TeamAusgebenDatei(team mannschaft, std::ofstream& ausgabe);
 void SpielerAusgebenDatei(player spieler, std::ofstream& ausgabe);
 
 void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists, std::string strIch);
 
 int AssistsAuslesen(int anzahlAuszeichnungen, std::ifstream& file);
+int MMRSchaetzen(match& aktSpiel);
+
+int DeltaMMR(int meineMMR, int gegnerMMR, bool eigenerTod)
+{	
+	float MMR_Teiler = 400;
+	float MMR_Fkt = 33;
+	int s = eigenerTod ? 0 : 1;
+	
+	int dMMR = MMR_Fkt * (s - (1/(1+pow(10, (gegnerMMR - meineMMR) / MMR_Teiler)))) + 0.5;
+	
+	return dMMR;
+}
 
 int main(int argc, char** argv)
 {
@@ -111,7 +124,7 @@ int main(int argc, char** argv)
 	match aktSpiel;
 	for(int i = 1; i < argc;i++)
 	{
-		aktSpiel = SpielAuslesen(argv[i]);
+		aktSpiel = SpielAuslesen(argv[i], strIch);
 		if(speichern) ErgebnisSpeichern(aktSpiel.Mannschaften, aktSpiel.anzahlTeams, aktSpiel.assists, strIch);
 	}
 	
@@ -119,7 +132,7 @@ int main(int argc, char** argv)
 	return 0;
 }
 
-match SpielAuslesen(char* DateiName)
+match SpielAuslesen(char* DateiName, std::string strIch)
 {
 	match aktSpiel;
 	std::ifstream file;
@@ -159,16 +172,19 @@ match SpielAuslesen(char* DateiName)
 	file.clear();
 	file.seekg(0L, file.beg); //Zeiger an Anfang von file setzen
 	
-	SpielerAuslesen(aktSpiel.Mannschaften, aktSpiel.anzahlTeams, file);
+	SpielerAuslesen(aktSpiel, file, strIch);
 	file.clear();
 	file.seekg(0L, file.beg); //Zeiger an Anfang von file setzen
+	
+	int dMMR = MMRSchaetzen(aktSpiel);
 	
 	BildschirmAusgabe(aktSpiel.Mannschaften, aktSpiel.anzahlTeams);
 	
 	aktSpiel.assists = AssistsAuslesen(anzahlAuszeichnungen, file);
-	std::cout<<"Erzielte Assists: "<<aktSpiel.assists<<"\n\n";
+	std::cout<<"Erzielte Assists: "<<aktSpiel.assists<<"\n";
+	std::cout<<"Geschaetzte neue MMR: "<<dMMR<<"\n\n";
 	
-	DateiAusgabe(aktSpiel.Mannschaften, aktSpiel.anzahlTeams, aktSpiel.assists);
+	DateiAusgabe(aktSpiel.Mannschaften, aktSpiel.anzahlTeams, aktSpiel.assists, dMMR);
 	
 	file.close();
 
@@ -336,7 +352,7 @@ int AnzahlAuszeichnungenAuslesen(std::ifstream& file)
 	return 0;
 }
 
-void SpielerAuslesen(team* mannschaften, int anzahlTeams, std::ifstream& file)
+void SpielerAuslesen(match& aktSpiel, std::ifstream& file, std::string strIch)
 {
 	char leseZeile[256];
 	std::string Zeile;
@@ -349,23 +365,30 @@ void SpielerAuslesen(team* mannschaften, int anzahlTeams, std::ifstream& file)
 	{
 		file.getline(leseZeile, 256);
 		Zeile = leseZeile;
-		for(int team=0; team < anzahlTeams; team++)
+		for(int team=0; team < aktSpiel.anzahlTeams; team++)
 		{
-			for(int spieler=0; spieler < mannschaften[team].teamGroesse; spieler++)
+			for(int spieler=0; spieler < aktSpiel.Mannschaften[team].teamGroesse; spieler++)
 			{
-				SpielerNameLesen(team, spieler, Zeile, mannschaften);
-				SpielerExtractionLesen(team, spieler, Zeile, mannschaften);
-				SpielerBountyLesen(team, spieler, Zeile, mannschaften);
-				SpielerDownedByMeLesen(team, spieler, Zeile, mannschaften);
-				SpielerDownedByTMLesen(team, spieler, Zeile, mannschaften);
-				SpielerDownedMeLesen(team, spieler, Zeile, mannschaften);
-				SpielerDownedTMLesen(team, spieler, Zeile, mannschaften);
-				SpielerKilledByMeLesen(team, spieler, Zeile, mannschaften);
-				SpielerKilledByTMLesen(team, spieler, Zeile, mannschaften);
-				SpielerKilledMeLesen(team, spieler, Zeile, mannschaften);
-				SpielerKilledTMLesen(team, spieler, Zeile, mannschaften);
-				SpielerMMRLesen(team, spieler, Zeile, mannschaften);
-				SpielerProfilIDLesen(team, spieler, Zeile, mannschaften);
+				SpielerNameLesen(team, spieler, Zeile, aktSpiel.Mannschaften);
+				SpielerExtractionLesen(team, spieler, Zeile, aktSpiel.Mannschaften);
+				SpielerBountyLesen(team, spieler, Zeile, aktSpiel.Mannschaften);
+				SpielerDownedByMeLesen(team, spieler, Zeile, aktSpiel.Mannschaften);
+				SpielerDownedByTMLesen(team, spieler, Zeile, aktSpiel.Mannschaften);
+				SpielerDownedMeLesen(team, spieler, Zeile, aktSpiel.Mannschaften);
+				SpielerDownedTMLesen(team, spieler, Zeile, aktSpiel.Mannschaften);
+				SpielerKilledByMeLesen(team, spieler, Zeile, aktSpiel.Mannschaften);
+				SpielerKilledByTMLesen(team, spieler, Zeile, aktSpiel.Mannschaften);
+				SpielerKilledMeLesen(team, spieler, Zeile, aktSpiel.Mannschaften);
+				SpielerKilledTMLesen(team, spieler, Zeile, aktSpiel.Mannschaften);
+				SpielerMMRLesen(team, spieler, Zeile, aktSpiel.Mannschaften);
+				SpielerProfilIDLesen(team, spieler, Zeile, aktSpiel.Mannschaften);
+				
+				if(strIch.compare(aktSpiel.Mannschaften[team].teamMitglieder[spieler].name) == 0)
+				{
+					aktSpiel.eigeneMMR = aktSpiel.Mannschaften[team].teamMitglieder[spieler].mmr;
+					aktSpiel.Mannschaften[team].ownTeam = true;
+					//std::cout<<"Eigene MMR = "<<aktSpiel.eigeneMMR;
+				}
 			}
 		}
 	}
@@ -920,7 +943,7 @@ void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists, std::stri
 	return;
 }
 
-bool DateiAusgabe(team* mannschaften, int anzahlTeams, int assists)
+bool DateiAusgabe(team* mannschaften, int anzahlTeams, int assists, int dMMR)
 {
 	std::ofstream ausgabe;
 	ausgabe.open("./BildschirmSpiegel.txt", std::ios::out|std::ios::app|std::ios::ate);
@@ -978,7 +1001,8 @@ bool DateiAusgabe(team* mannschaften, int anzahlTeams, int assists)
 	ausgabe<<std::setw(13)<<char(43)<<"\n\n";
 	ausgabe.fill(' ');
 	
-	ausgabe<<"Assists: "<<assists<<"\n\n";
+	ausgabe<<"Assists: "<<assists<<"\n";
+	ausgabe<<"Geschaetzte neue MMR: "<<dMMR<<"\n\n";
 	
 	return true;
 }
@@ -1052,4 +1076,22 @@ void SpielerAusgebenDatei(player spieler, std::ofstream& ausgabe)
 	}
 	ausgabe<<" "<<char(124)<<"\n";
 	return;
+}
+
+int MMRSchaetzen(match& aktSpiel)
+{
+	int schaetzMMR = aktSpiel.eigeneMMR;
+	for(int team=0; team < aktSpiel.anzahlTeams; team++)
+	{
+		if(aktSpiel.Mannschaften[team].ownTeam == true)continue;
+		for(int spieler=0; spieler < aktSpiel.Mannschaften[team].teamGroesse; spieler++)
+		{
+			player aktPlayer = aktSpiel.Mannschaften[team].teamMitglieder[spieler];
+			int killedByMe = aktPlayer.downedByMe + aktPlayer.killedByMe;
+			int killedMe = aktPlayer.downedMe + aktPlayer.killedMe;
+			schaetzMMR += (killedMe * DeltaMMR(aktSpiel.eigeneMMR, aktPlayer.mmr, true));
+			schaetzMMR += (killedByMe * DeltaMMR(aktSpiel.eigeneMMR, aktPlayer.mmr, false));
+		}
+	}
+	return schaetzMMR;
 }
