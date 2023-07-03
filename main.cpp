@@ -110,7 +110,7 @@ int main(int argc, char** argv)
 	bool speichern;
 	std::cout<<"Ergebnis(se) speichern? [j/n]: ";
 	std::cin>>antwort;
-	if(antwort.compare("j") == 0)
+	if((antwort.compare("j") == 0)||(antwort.compare("J") == 0))
 	{
 		std::cout<<"Ergebnis wird gespeichert\n";
 		speichern = true;
