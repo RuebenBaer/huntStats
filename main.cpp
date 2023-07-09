@@ -859,8 +859,8 @@ void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists, std::stri
 	std::ofstream ausgabe("./huntStatistik.csv", std::ios::out|std::ios::app|std::ios::ate);
 	if(ausgabe.tellp() == ausgabe.beg)
 	{
-		ausgabe<<"Ich;MMR;Kills;Tode;Assists;Partner 1;MMR;Partner 2;";
-		ausgabe<<"MMR;Extraction;Bounty;Kills (Team);Tode (Team);Gegner-MMR ('+' = killed by me | '-' = killed me);\n";
+		ausgabe<<"Ich,MMR;Kills,Tode;Assists,Partner 1,MMR,Partner 2,";
+		ausgabe<<"MMR,Extraction,Bounty,Kills (Team),Tode (Team),Gegner-MMR ('+' = killed by me | '-' = killed me),\n";
 	}
 	int teamDeaths, teamKills;
 	int myDeaths, myKills;
@@ -899,25 +899,25 @@ void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists, std::stri
 	aktSpieler = mannschaft[meinTeam].teamMitglieder[ichNr];
 	extraction += aktSpieler.teamextraction;
 	bounty += aktSpieler.bountyExtracted;
-	ausgabe<<aktSpieler.name<<";"<<aktSpieler.mmr<<";"<<myKills<<";"<<myDeaths<<";"<<assists<<";";
+	ausgabe<<aktSpieler.name<<","<<aktSpieler.mmr<<","<<myKills<<","<<myDeaths<<","<<assists<<",";
 	
 	for(int spieler = 0; spieler < 3; spieler++)
 	{
 		if(spieler == ichNr)continue;
 		if(spieler >= mannschaft[meinTeam].teamGroesse)
 		{
-			ausgabe<<";;";
+			ausgabe<<",,";
 		}
 		else
 		{
 			aktSpieler = mannschaft[meinTeam].teamMitglieder[spieler];
-			ausgabe<<aktSpieler.name<<";"<<aktSpieler.mmr<<";";			
+			ausgabe<<aktSpieler.name<<","<<aktSpieler.mmr<<",";			
 			extraction += aktSpieler.teamextraction;
 			bounty += aktSpieler.bountyExtracted;
 		}
 	}
 	
-	ausgabe<<extraction<<";"<<bounty<<";"<<teamKills<<";"<<teamDeaths<<";";
+	ausgabe<<extraction<<","<<bounty<<","<<teamKills<<","<<teamDeaths<<",";
 	for(int team = 0; team < anzahlTeams; team++)
 	{
 		if(team == meinTeam)continue;
@@ -927,13 +927,13 @@ void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists, std::stri
 			int killCount = 0;
 			while(killCount < (aktSpieler.downedByMe + aktSpieler.killedByMe))
 			{
-				ausgabe<<"+"<<aktSpieler.mmr<<";";
+				ausgabe<<"+"<<aktSpieler.mmr<<",";
 				killCount++;
 			}
 			killCount = 0;
 			while(killCount < (aktSpieler.downedMe + aktSpieler.killedMe))
 			{
-				ausgabe<<"-"<<aktSpieler.mmr<<";";
+				ausgabe<<"-"<<aktSpieler.mmr<<",";
 				killCount++;
 			}
 		}
