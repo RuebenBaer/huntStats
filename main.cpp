@@ -4,6 +4,7 @@
 #include <cmath>
 #include <vector>
 #include <iomanip>
+#include <filesystem>
 
 typedef struct{
 	std::string name;
@@ -64,6 +65,7 @@ bool DateiAusgabe(team* mannschaften, int anzahlTeams, int assists, int dMMR);
 void TeamAusgebenDatei(team mannschaft, std::ofstream& ausgabe);
 void SpielerAusgebenDatei(player spieler, std::ofstream& ausgabe);
 
+std::string FindeNeuenNamen(void);
 void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists, std::string strIch);
 
 int AssistsAuslesen(int anzahlAuszeichnungen, std::ifstream& file);
@@ -106,8 +108,8 @@ int main(int argc, char** argv)
 		return EXIT_FAILURE;
 	}
 
-	std::string antwort;
-	bool speichern;
+	bool speichern = true;
+	/*std::string antwort;
 	std::cout<<"Ergebnis(se) speichern? [j/n]: ";
 	std::cin>>antwort;
 	if((antwort.compare("j") == 0)||(antwort.compare("J") == 0))
@@ -119,8 +121,26 @@ int main(int argc, char** argv)
 	{
 		std::cout<<"Keine Speicherung der Ergebnisse\n";
 		speichern = false;
-	}
+	}*/
 	
+	std::string archivName = FindeNeuenNamen();
+	if(archivName.empty())
+	{
+		std::cout<<"Kein Dateiname verfu:gbar\n";
+		system("PAUSE");
+		return 0;
+	}
+	std::ifstream  src(argv[1], std::ios::binary);
+	std::ofstream  dst(archivName,   std::ios::binary);
+	if(src.is_open() && dst.is_open())
+	{
+		dst << src.rdbuf();
+	}else{
+		std::cout<<"Datei "<<argv[1]<<" nicht kopiert\n";
+		system("PAUSE");
+		return 0;
+	}
+
 	match aktSpiel;
 	for(int i = 1; i < argc;i++)
 	{
@@ -130,6 +150,27 @@ int main(int argc, char** argv)
 	
 	system("PAUSE");
 	return 0;
+}
+
+std::string FindeNeuenNamen(void)
+{
+	std::ifstream test;
+	char testName[256];
+	for(int i = 1; i < 50000; i++)
+	{
+		sprintf(testName, "./Attributes/Eingelesen/attributes%d.xml", i);
+		test.open(testName);
+		if(test.is_open())
+		{
+			test.close();
+		}
+		else
+		{
+			std::cout<<testName<<" ist nicht vergeben\n";
+			return std::string(testName);
+		}
+	}
+	return std::string();
 }
 
 match SpielAuslesen(char* DateiName, std::string strIch)
