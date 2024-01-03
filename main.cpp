@@ -65,7 +65,8 @@ bool DateiAusgabe(team* mannschaften, int anzahlTeams, int assists, int dMMR);
 void TeamAusgebenDatei(team mannschaft, std::ofstream& ausgabe);
 void SpielerAusgebenDatei(player spieler, std::ofstream& ausgabe);
 
-std::string FindeNeuenNamen(void);
+int FindeLetzteNummer(void);
+bool DateiVergleich(char *file1, char *file2);
 void ErgebnisSpeichern(team* mannschaft, int anzahlTeams, int assists, std::string strIch);
 
 int AssistsAuslesen(int anzahlAuszeichnungen, std::ifstream& file);
@@ -123,15 +124,24 @@ int main(int argc, char** argv)
 		speichern = false;
 	}*/
 	
-	std::string archivName = FindeNeuenNamen();
-	if(archivName.empty())
+	int letzteNummer = FindeLetzteNummer();
+	if(letzteNummer == -1)
 	{
 		std::cout<<"Kein Dateiname verfu:gbar\n";
 		system("PAUSE");
 		return 0;
 	}
+	char archivName[256];
+	sprintf(archivName, "./Attributes/Eingelesen/attributes%d.xml", letzteNummer);
+	if(DateiVergleich(archivName, argv[1]) == true)
+	{
+		std::cout<<"Datei "<<archivName<<" ist identisch mit Datei "<<argv[1]<<"\nAbbruch!\n";
+		return 0;
+	}
+	
+	sprintf(archivName, "./Attributes/Eingelesen/attributes%d.xml", letzteNummer + 1);
 	std::ifstream  src(argv[1], std::ios::binary);
-	std::ofstream  dst(archivName,   std::ios::binary);
+	std::ofstream  dst(archivName, std::ios::binary);
 	if(src.is_open() && dst.is_open())
 	{
 		dst << src.rdbuf();
@@ -152,7 +162,7 @@ int main(int argc, char** argv)
 	return 0;
 }
 
-std::string FindeNeuenNamen(void)
+int FindeLetzteNummer(void)
 {
 	std::ifstream test;
 	char testName[256];
@@ -167,10 +177,56 @@ std::string FindeNeuenNamen(void)
 		else
 		{
 			std::cout<<testName<<" ist nicht vergeben\n";
-			return std::string(testName);
+			return (i - 1);
 		}
 	}
-	return std::string();
+	return -1;
+}
+
+bool DateiVergleich(char *fileName1, char *fileName2)
+{
+	std::ifstream file1, file2;
+	
+	file1.open(fileName1, std::ios::in);
+	file2.open(fileName2, std::ios::in);
+	if(file1.fail())
+	{
+		file1.close();
+		file2.close();
+		std::cout<<"Fehler beim öffnen von Datei "<<fileName1<<" - Abbruch\n";
+		exit(1);
+	}
+	if(file2.fail())
+	{
+		file1.close();
+		file2.close();
+		std::cout<<"Fehler beim öffnen von Datei "<<fileName2<<" - Abbruch\n";
+		exit(1);
+	}
+	
+	file1.seekg (0, file1.end);
+    int length1 = file1.tellg();
+    file1.seekg (0, file1.beg);
+
+	file2.seekg (0, file2.end);
+    int length2 = file2.tellg();
+    file2.seekg (0, file2.beg);
+	
+	if(length1 != length2)
+	{
+		return false;
+	}
+	
+	while(!file1.eof())
+	{
+		if(file1.peek() != file2.peek())
+		{
+			return false;
+		}
+		file1.ignore(1);
+		file2.ignore(1);
+	};
+	return true;
 }
 
 match SpielAuslesen(char* DateiName, std::string strIch)
